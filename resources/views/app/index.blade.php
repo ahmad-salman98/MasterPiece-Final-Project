@@ -1,11 +1,14 @@
-@extends('master')
+@extends('app.master')
 
 @section('content')
 
+{{-- Swiper Section start --}}
 <section>
     <div class="swiper-container swiper-slider swiper-variant-1 bg-black" data-loop="false" data-autoplay="5500"
         data-simulate-touch="true">
         <div class="swiper-wrapper text-center">
+
+            {{-- 1st slide swiper start --}}
             <div class="swiper-slide" data-slide-bg="images/banner1.jpg">
                 <div class="swiper-slide-caption text-center">
                     <div class="container">
@@ -29,6 +32,10 @@
                     </div>
                 </div>
             </div>
+            {{-- 1st slide swiper end --}}
+
+
+            {{-- 2nd slide swiper start --}}
             <div class="swiper-slide" data-slide-bg="images/banner2.jpg">
                 <div class="swiper-slide-caption text-center">
                     <div class="container">
@@ -53,6 +60,9 @@
                     </div>
                 </div>
             </div>
+            {{-- 2nd slide swiper end --}}
+
+            {{-- 3rd slide swiper start--}}
             <div class="swiper-slide" data-slide-bg="images/banner3.jpg">
                 <div class="swiper-slide-caption text-center">
                     <div class="container">
@@ -76,19 +86,29 @@
                     </div>
                 </div>
             </div>
+            {{-- 3rd slide swiper end--}}
+
         </div>
+
+        {{-- Swiper Controllers start --}}
         <div class="swiper-scrollbar d-lg-none"></div>
         <div class="swiper-nav-wrap">
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
         </div>
+        {{-- Swiper Controllers end --}}
     </div>
 </section>
+{{-- Swiper Section end --}}
 
+
+{{-- What we Offer Start --}}
 <section class="section-50 section-md-75 section-lg-100">
     <div class="container">
         <h3 class="text-center">What Do We Offer</h3>
-        <div class="row row-40">
+        <div class="row px-5 d-flex justify-content-between">
+
+            {{-- 1st offer start --}}
             <div class="col-md-6 col-lg-4 height-fill">
                 <article class="icon-box">
                     <div class="box-top">
@@ -107,6 +127,9 @@
                     </div>
                 </article>
             </div>
+            {{-- 1st offer end --}}
+
+            {{-- 2nd offer start --}}
             <div class="col-md-6 col-lg-4 height-fill">
                 <article class="icon-box">
                     <div class="box-top">
@@ -125,6 +148,9 @@
                     </div>
                 </article>
             </div>
+            {{-- 2nd offer end --}}
+
+            {{-- 3rd offer start --}}
             <div class="col-md-6 col-lg-4 height-fill">
                 <article class="icon-box">
                     <div class="box-top">
@@ -141,16 +167,22 @@
                     </div>
                 </article>
             </div>
+            {{-- 3rd offer end --}}
+
         </div>
     </div>
 </section>
+{{-- what we offer end --}}
 
-<section class="bg-displaced-wrap">
+{{-- About us start --}}
+
+<section class="bg-displaced-wrap" style="margin-bottom:10rem">
     <div class="bg-displaced-body">
         <div class="container">
-            <div class="inset-xl-left-70 inset-xl-right-70">
+            <div class="px-5 ">
                 <article class="box-cart bg-ebony-clay">
-                    <div class="box-cart-image"><img src="images/home-2-342x338.jpg" alt="" width="342" height="338" />
+                    <div class="box-cart-image"><img class="ahmad-salman-img" src="images/ahmad-salman.jpeg" alt=""
+                            width="342" height="338" />
                     </div>
                     <div class="box-cart-body">
                         <blockquote class="blockquote-complex blockquote-complex-inverse">
@@ -166,100 +198,20 @@
                         </blockquote>
                         <div class="button-wrap inset-md-left-70"><a
                                 class="button button-responsive button-medium button-primary-outline-v2" href="#">Join
-                                Us For
-                                Free</a></div>
+                                Us For Free</a></div>
                     </div>
                 </article>
             </div>
         </div>
     </div>
-    <div class="bg-displaced bg-image" style="background-image: url(images/home-1.jpg);"></div>
+    <div class="bg-displaced bg-image" style="background-image: url(ima);"></div>
 </section>
+{{-- About us end --}}
 
-<section class="section-60 section-lg-100">
-    <div class="container">
-        <div class="row row-40 align-items-sm-end">
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="thumbnail-variant-2-wrap">
-                    <div class="thumbnail thumbnail-variant-2">
-                        <figure class="thumbnail-image"><img src="./images/" alt="" width="246" height="300" />
-                        </figure>
-                        <div class="thumbnail-inner">
-                            <div class="link-group"><span
-                                    class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
-                                    class="link-white" href="tel:#">+1 (409) 987–5874</a></div>
-                            <div class="link-group"><span
-                                    class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
-                                    class="link-white" href="mailto:#">info@demolink.org</a></div>
-                        </div>
-                        <div class="thumbnail-caption">
-                            <p class="text-header"><a href="#">Amanda Smith</a></p>
-                            <div class="divider divider-md bg-teak"></div>
-                            <p class="text-caption">Paralegal</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="thumbnail-variant-2-wrap">
-                    <div class="thumbnail thumbnail-variant-2">
-                        <figure class="thumbnail-image"><img src="images/team-10-246x300.jpg" alt="" width="246"
-                                height="300" />
-                        </figure>
-                        <div class="thumbnail-inner">
-                            <div class="link-group"><span
-                                    class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
-                                    class="link-white" href="tel:#">+1 (409) 987–5874</a></div>
-                            <div class="link-group"><span
-                                    class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
-                                    class="link-white" href="mailto:#">info@demolink.org</a></div>
-                        </div>
-                        <div class="thumbnail-caption">
-                            <p class="text-header"><a href="#">John Doe</a></p>
-                            <div class="divider divider-md bg-teak"></div>
-                            <p class="text-caption">Attorney</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="thumbnail-variant-2-wrap">
-                    <div class="thumbnail thumbnail-variant-2">
-                        <figure class="thumbnail-image"><img src="images/team-11-246x300.jpg" alt="" width="246"
-                                height="300" />
-                        </figure>
-                        <div class="thumbnail-inner">
-                            <div class="link-group"><span
-                                    class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
-                                    class="link-white" href="tel:#">+1 (409) 987–5874</a></div>
-                            <div class="link-group"><span
-                                    class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
-                                    class="link-white" href="mailto:#">info@demolink.org</a></div>
-                        </div>
-                        <div class="thumbnail-caption">
-                            <p class="text-header"><a href="#">Vanessa Ives</a></p>
-                            <div class="divider divider-md bg-teak"></div>
-                            <p class="text-caption">Legal Assistant</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-12 col-lg-3 text-center">
-                <div class="block-wrap-1">
-                    <div class="block-number">06</div>
-                    <h3 class="text-normal">Experts</h3>
-                    <p class="h5 h5-smaller text-style-4">in Their Fields</p>
-                    <p>If you or your business is facing a legal challenge, contact us today to arrange a free initial
-                        consultation with an attorney.</p><a
-                        class="link link-group link-group-animated link-bold link-secondary" href="#"><span>Read
-                            more</span><span class="novi-icon icon icon-xxs icon-primary fa fa-angle-right"></span></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="section parallax-container bg-black" data-parallax-img="images/progress-bars-parallax-1.jpg">
+{{-- Statistics Section start --}}
+
+<section class="section parallax-container bg-black mt-5 " data-parallax-img="images/banner1.jpg">
     <div class="parallax-content">
         <div class="section-50 section-md-90">
             <div class="container">
@@ -297,14 +249,141 @@
         </div>
     </div>
 </section>
+{{-- Statistics Section end --}}
 
+
+{{-- Gallery start --}}
+
+<section class="section section-sm section-top-0 section-fluid section-relative bg-gray-4">
+    <div class="container py-5 my-5">
+        <h3 class="text-center mt-5 pt-5">Our Top Streamers</h3>
+        <!-- Owl Carousel-->
+        <div class="owl-carousel owl-classic owl-dots-secondary " data-items="1" data-sm-items="1" data-md-items="2"
+            data-lg-items="3" data-xl-items="4" data-xxl-items="5" data-stage-padding="15" data-xxl-stage-padding="0"
+            data-margin="30" data-autoplay="true" data-nav="true" data-dots="true">
+            <!-- Thumbnail Classic-->
+            {{-- <article class="thumbnail thumbnail-mary">
+                <div class="thumbnail-mary-figure">
+                    <img style="max: width 100%; ; height: 350px; object-fit:cover" src="images/ahmad-salman.jpeg"
+                        alt="" width="270" height="195" />
+                </div>
+
+                <div class="thumbnail-mary-caption">
+                    <a class="icon" href="#" data-lightgallery="item">
+                        <p class="text-dark ">Ahmad </p>
+                    </a>
+                </div>
+            </article> --}}
+            <div class="thumbnail thumbnail-variant-2 ">
+                <figure class="thumbnail-image">
+                    <img style="max-width:100%; height:350px; object-fit:cover" src="./images/banner1.jpg" alt="" />
+                </figure>
+                <div class="thumbnail-inner">
+                    <div class="link-group"><span
+                            class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
+                            class="link-white" href="tel:+962778086352">+962 (77) 808–6352</a></div>
+                    <div class="link-group"><span class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
+                            class="link-white" href="mailto:#">info@demolink.org</a></div>
+                </div>
+                <div class="thumbnail-caption">
+                    <p class="text-header"><a href="#">Amanda Smith</a></p>
+                    <div class="divider divider-md bg-teak"></div>
+                    <p class="text-caption">Paralegal</p>
+                </div>
+            </div>
+
+            <div class="thumbnail thumbnail-variant-2 ">
+                <figure class="thumbnail-image">
+                    <img style="max-width:100%; height:350px; object-fit:cover" src="./images/ahmad-salman.jpeg"
+                        alt="" />
+                </figure>
+                <div class="thumbnail-inner">
+                    <div class="link-group"><span
+                            class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
+                            class="link-white" href="tel:#">+962 (77) 808–6352</a></div>
+                    <div class="link-group"><span class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
+                            class="link-white" href="mailto:#">info@demolink.org</a></div>
+                </div>
+                <div class="thumbnail-caption">
+                    <p class="text-header"><a href="#">Amanda Smith</a></p>
+                    <div class="divider divider-md bg-teak"></div>
+                    <p class="text-caption">Paralegal</p>
+                </div>
+            </div>
+
+            <div class="thumbnail thumbnail-variant-2 ">
+                <figure class="thumbnail-image">
+                    <img style="max-width:100%; height:350px; object-fit:cover" src="./images/ahmad-salman.jpeg"
+                        alt="" />
+                </figure>
+                <div class="thumbnail-inner">
+                    <div class="link-group"><span
+                            class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
+                            class="link-white" href="tel:#">+962 (77) 808–6352</a></div>
+                    <div class="link-group"><span class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
+                            class="link-white" href="mailto:#">info@demolink.org</a></div>
+                </div>
+                <div class="thumbnail-caption">
+                    <p class="text-header"><a href="#">Amanda Smith</a></p>
+                    <div class="divider divider-md bg-teak"></div>
+                    <p class="text-caption">Paralegal</p>
+                </div>
+            </div>
+
+            <div class="thumbnail thumbnail-variant-2 ">
+                <figure class="thumbnail-image">
+                    <img style="max-width:100%; height:350px; object-fit:cover" src="./images/ahmad-salman.jpeg"
+                        alt="" />
+                </figure>
+                <div class="thumbnail-inner">
+                    <div class="link-group"><span
+                            class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
+                            class="link-white" href="tel:#">+962 (77) 808–6352</a></div>
+                    <div class="link-group"><span class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
+                            class="link-white" href="mailto:#">info@demolink.org</a></div>
+                </div>
+                <div class="thumbnail-caption">
+                    <p class="text-header"><a href="#">Amanda Smith</a></p>
+                    <div class="divider divider-md bg-teak"></div>
+                    <p class="text-caption">Paralegal</p>
+                </div>
+            </div>
+
+            <div class="thumbnail thumbnail-variant-2 ">
+                <figure class="thumbnail-image">
+                    <img style="max-width:100%; height:350px; object-fit:cover" src="./images/ahmad-salman.jpeg"
+                        alt="" />
+                </figure>
+                <div class="thumbnail-inner">
+                    <div class="link-group"><span
+                            class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
+                            class="link-white" href="tel:#">+962 (77) 808–6352</a></div>
+                    <div class="link-group"><span class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
+                            class="link-white" href="mailto:#">info@demolink.org</a></div>
+                </div>
+                <div class="thumbnail-caption">
+                    <p class="text-header"><a href="#">Amanda Smith</a></p>
+                    <div class="divider divider-md bg-teak"></div>
+                    <p class="text-caption">Paralegal</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+{{-- Gallery end --}}
+
+
+
+{{-- Teatmonials start --}}
 
 <section class="section-66 section-md-90 section-xl-bottom-100">
     <div class="container">
         <h3 class="text-center">Testimonials</h3>
         <div class="owl-carousel owl-spacing-1 owl-nav-classic owl-style-minimal" data-autoplay="true" data-items="1"
             data-md-items="2" data-stage-padding="0" data-loop="true" data-margin="30" data-mouse-drag="true"
-            data-nav="true" data-dots="true" data-dots-each="1">
+            data-nav="true" data-dots="false" data-dots-each="1">
             <div class="item">
                 <blockquote class="quote-bordered">
                     <div class="quote-body">
@@ -380,6 +459,10 @@
         </div>
     </div>
 </section>
+{{-- Teatmonials end --}}
+
+
+{{-- Contact Form start --}}
 
 <section class="bg-whisper">
     <div class="container">
@@ -393,21 +476,21 @@
                             <div class="col-md-6">
                                 <div class="form-wrap">
                                     <input class="form-input" id="request-form-name" type="text" name="name"
-                                        data-constraints="@Required">
+                                        data-constraints="">
                                     <label class="form-label" for="request-form-name">Name</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-wrap">
                                     <input class="form-input" id="request-form-phone" type="text" name="phone"
-                                        data-constraints="@Numeric @Required">
+                                        data-constraints="">
                                     <label class="form-label" for="request-form-phone">Phone</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-wrap">
                                     <input class="form-input" id="request-form-email" type="email" name="email"
-                                        data-constraints="@Email @Required">
+                                        data-constraints="">
                                     <label class="form-label" for="request-form-email">Email</label>
                                 </div>
                             </div>
@@ -426,7 +509,7 @@
                             <div class="col-12">
                                 <div class="form-wrap">
                                     <textarea class="form-input" id="feedback-2-message" name="message"
-                                        data-constraints="@Required"></textarea>
+                                        data-constraints=""></textarea>
                                     <label class="form-label" for="feedback-2-message">Message</label>
                                 </div>
                             </div>
@@ -449,92 +532,9 @@
         </div>
     </div>
 </section>
-<section class="section-50 section-md-75 section-xl-100">
-    <div class="container">
-        <h3 class="text-center">Latest News</h3>
-        <div class="row row-40 row-offset-1 justify-content-sm-center justify-content-md-start">
-            <div class="col-sm-9 col-md-6 col-lg-4 col-xl-3">
-                <article class="post-boxed">
-                    <div class="post-boxed-image"><img src="images/home-5-268x182.jpg" alt="" width="268"
-                            height="182" />
-                    </div>
-                    <div class="post-boxed-body">
-                        <div class="post-boxed-title"><a href="#">The Lawyers Collective Women's Rights Initiative</a>
-                        </div>
-                        <div class="post-boxed-footer">
-                            <ul class="post-boxed-meta">
-                                <li>
-                                    <time datetime="2019-06-14">JUNE 14, 2019</time>
-                                </li>
-                                <li><span>by</span><a href="#">Admin</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="col-sm-9 col-md-6 col-lg-4 col-xl-3">
-                <article class="post-boxed">
-                    <div class="post-boxed-image"><img src="images/home-6-268x182.jpg" alt="" width="268"
-                            height="182" />
-                    </div>
-                    <div class="post-boxed-body">
-                        <div class="post-boxed-title"><a href="#">Legal Documents Every Landlord Needs</a></div>
-                        <div class="post-boxed-footer">
-                            <ul class="post-boxed-meta">
-                                <li>
-                                    <time datetime="2019-06-20">JUNE 20, 2019</time>
-                                </li>
-                                <li><span>by</span><a href="#">Admin</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="col-sm-9 col-md-6 col-lg-4 col-xl-3">
-                <article class="post-boxed">
-                    <div class="post-boxed-image"><img src="images/home-7-268x182.jpg" alt="" width="268"
-                            height="182" />
-                    </div>
-                    <div class="post-boxed-body">
-                        <div class="post-boxed-title"><a href="#">Help Us Make the Law Accessible for Everyone</a></div>
-                        <div class="post-boxed-footer">
-                            <ul class="post-boxed-meta">
-                                <li>
-                                    <time datetime="2019-06-23">JUNE 23, 2019</time>
-                                </li>
-                                <li><span>by</span><a href="#">Admin</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="col-sm-9 col-md-6 col-lg-4 col-xl-3">
-                <article class="post-boxed">
-                    <div class="post-boxed-image"><img src="images/home-8-268x182.jpg" alt="" width="268"
-                            height="182" />
-                    </div>
-                    <div class="post-boxed-body">
-                        <div class="post-boxed-title"><a href="#">5 Legal Documents for Military Service People</a>
-                        </div>
-                        <div class="post-boxed-footer">
-                            <ul class="post-boxed-meta">
-                                <li>
-                                    <time datetime="2019-06-12">JUNE 12, 2019</time>
-                                </li>
-                                <li><span>by</span><a href="#">Admin</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </div>
-</section>
-<a class="section section-banner" href="https://www.templatemonster.com/intense-multipurpose-html-template.html"
-    style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x, url(images/banner/background-03-3840x620.jpg) 2x )"><img
-        src="images/banner/foreground-03-1600x310.png"
-        srcset="images/banner/foreground-03-1600x310.png 1x, images/banner/foreground-03-3200x620.png 2x" alt=""
-        width="1600" height="310"></a>
+
+{{-- Contact Form end --}}
+
 
 
 @endsection

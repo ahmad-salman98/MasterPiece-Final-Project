@@ -14,7 +14,7 @@ class appController extends Controller
     public function index()
     {
         //show main page
-        return view('app.welcome');
+        return view('app.index');
     }
 
     /**
