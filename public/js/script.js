@@ -37,6 +37,8 @@
             pageTitles: $('.page-title'),
             copyrightYear: $(".copyright-year"),
             materialParallax: $(".parallax-container"),
+            circleProgress: $(".progress-bar-circle"),
+
         };
 
     /**
@@ -1250,5 +1252,124 @@
     });
 })();
 // ================= my edits  =================
+
+
+
+$window.on('load', function () {
+    // Progress bar
+    if (plugins.progressLinear.length) {
+        for (var i = 0; i < plugins.progressLinear.length; i++) {
+            var
+                bar = $(plugins.progressLinear[i]),
+                initProgress = function () {
+                    var
+                        bar = $(this),
+                        end = parseInt($(this).find('.progress-value').text(), 10);
+
+                    // console.log( !bar.hasClass("animated-first"), isScrolledIntoView(bar), bar[0].offsetParent );
+                    if (!bar.hasClass("animated-first") && isScrolledIntoView(bar)) {
+                        bar.find('.progress-bar-linear').css({ width: end + '%' });
+                        bar.find('.progress-value').countTo({
+                            refreshInterval: 40,
+                            from: 0,
+                            to: end,
+                            speed: 1000
+                        });
+                        bar.addClass('animated-first');
+                    }
+                };
+
+            $.proxy(initProgress, bar)();
+            $window.on("scroll", $.proxy(initProgress, bar));
+        }
+    }
+
+    // Circle Progress
+    if (plugins.circleProgress.length) {
+        for (var i = 0; i < plugins.circleProgress.length; i++) {
+            var circle = $(plugins.circleProgress[i]);
+
+            circle.circleProgress({
+                value: circle.attr('data-value'),
+                size: circle.attr('data-size') ? circle.attr('data-size') : 175,
+                fill: {
+                    gradient: circle.attr('data-gradient').split(","),
+                    gradientAngle: Math.PI / 4
+                },
+                startAngle: -Math.PI / 4 * 2,
+                emptyFill: circle.attr('data-empty-fill') ? circle.attr('data-empty-fill') : "rgb(245,245,245)"
+            }).on('circle-animation-progress', function (event, progress, stepValue) {
+                $(this).find('span').text(String(stepValue.toFixed(2)).replace('0.', '').replace('1.', '1'));
+            });
+
+            if (isScrolledIntoView(circle)) circle.addClass('animated-first');
+
+            $window.on('scroll', $.proxy(function () {
+                var circle = $(this);
+                if (!circle.hasClass("animated-first") && isScrolledIntoView(circle)) {
+                    circle.circleProgress('redraw');
+                    circle.addClass('animated-first');
+                }
+            }, circle));
+        }
+    }
+    if (plugins.preloader.length && !isNoviBuilder) {
+        pageTransition({
+            target: document.querySelector('.page'),
+            delay: 0,
+            duration: 500,
+            classIn: 'fadeIn',
+            classOut: 'fadeOut',
+            classActive: 'animated',
+            conditions: function (event, link) {
+                return !/(\#|callto:|tel:|mailto:|:\/\/)/.test(link) && !event.currentTarget.hasAttribute('data-lightgallery');
+            },
+            onTransitionStart: function (options) {
+                setTimeout(function () {
+                    plugins.preloader.removeClass('loaded');
+                }, options.duration * .75);
+            },
+            onReady: function () {
+                plugins.preloader.addClass('loaded');
+                windowReady = true;
+            }
+        });
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

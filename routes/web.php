@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\appController;
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +18,34 @@ use Illuminate\Support\Facades\Route;
 // ----------------------- app routes -----------------------
 
 // ---------- main page -------------
-Route::get('/', [appController::class, 'index']);
-Route::get('/index', [appController::class, 'index']);
+Route::get('/', [appController::class, 'index'])->name('home');
+
+// ---------- appointment page -------------
+Route::get('/appointment', function () {
+
+    return view('app.appointment',);
+})->name('appointment');
+
+
+// ---------- Contact page -------------
+
+Route::get('/contact', function () {
+    return view('app.contact');
+})->name('contact');
+
+
+// ---------- Checkout page -------------
+
+Route::get('/checkout', [appController::class, 'checkout'])->name('checkout');
+
+
+// ---------- About page -------------
+
+Route::get('/about', [appController::class, 'about'])->name('about');
+
+
+
+// ----------------------- User routes -----------------------
+
+// ---------- profile page -------------
+Route::get('/profile',[userController::class , 'profile'])->name('profile');

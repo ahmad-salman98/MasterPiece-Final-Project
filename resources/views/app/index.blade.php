@@ -1,9 +1,9 @@
 @extends('app.master')
-
+@section('title','Home')
 @section('content')
 
 {{-- Swiper Section start --}}
-<section>
+<section class="max-width">
     <div class="swiper-container swiper-slider swiper-variant-1 bg-black" data-loop="false" data-autoplay="5500"
         data-simulate-touch="true">
         <div class="swiper-wrapper text-center">
@@ -197,7 +197,7 @@
                             </div>
                         </blockquote>
                         <div class="button-wrap inset-md-left-70"><a
-                                class="button button-responsive button-medium button-primary-outline-v2" href="#">Join
+                                class="button button-responsive button-medium button-primary-outline-v2" href="/appointment">Join
                                 Us For Free</a></div>
                     </div>
                 </article>
