@@ -262,8 +262,7 @@
                 </div>
             </div>
             <div class="col-md-9 col-lg-6 col-xl-7 offset-top-30 offset-md-top-0 d-none d-lg-block">
-                <div class="image-wrap-1"><img
-                        style="height: 100%; object-fit:cover" />
+                <div class="image-wrap-1"><img style="height: 100%; object-fit:cover" />
                 </div>
             </div>
         </div>

@@ -176,7 +176,7 @@
 
 {{-- About us start --}}
 
-<section class="bg-displaced-wrap" style="margin-bottom:10rem">
+<section class="bg-displaced-wrap" style="margin-bottom:10rem; background: #F0F4F8" >
     <div class="bg-displaced-body">
         <div class="container">
             <div class="px-5 ">
@@ -197,7 +197,8 @@
                             </div>
                         </blockquote>
                         <div class="button-wrap inset-md-left-70"><a
-                                class="button button-responsive button-medium button-primary-outline-v2" href="/appointment">Join
+                                class="button button-responsive button-medium button-primary-outline-v2"
+                                href="/appointment">Join
                                 Us For Free</a></div>
                     </div>
                 </article>
@@ -254,9 +255,9 @@
 
 {{-- Gallery start --}}
 
-<section class="section section-sm section-top-0 section-fluid section-relative bg-gray-4">
+<section class="section section-sm section-top-0 section-fluid section-relative bg-gray-4" style="background: #F0F4F8; margin:10rem 0">
     <div class="container py-5 my-5">
-        <h3 class="text-center mt-5 pt-5">Our Top Streamers</h3>
+        <h3 class="text-center">Our Top Streamers</h3>
         <!-- Owl Carousel-->
         <div class="owl-carousel owl-classic owl-dots-secondary " data-items="1" data-sm-items="1" data-md-items="2"
             data-lg-items="3" data-xl-items="4" data-xxl-items="5" data-stage-padding="15" data-xxl-stage-padding="0"
@@ -462,79 +463,157 @@
 {{-- Teatmonials end --}}
 
 
-{{-- Contact Form start --}}
+{{-- Pricing start --}}
 
-<section class="bg-whisper">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-lg-9 col-xl-7">
-                <div class="section-50 section-md-75 section-xl-100">
-                    <h3>Free Consultation</h3>
-                    <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact"
-                        method="post" action="bat/rd-mailform.php">
-                        <div class="row row-30">
-                            <div class="col-md-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="request-form-name" type="text" name="name"
-                                        data-constraints="">
-                                    <label class="form-label" for="request-form-name">Name</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="request-form-phone" type="text" name="phone"
-                                        data-constraints="">
-                                    <label class="form-label" for="request-form-phone">Phone</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="request-form-email" type="email" name="email"
-                                        data-constraints="">
-                                    <label class="form-label" for="request-form-email">Email</label>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-wrap form-wrap-outside">
-                                    <!--Select 2-->
-                                    <select class="form-input select-filter" id="request-form-select"
-                                        data-minimum-results-for-search="Infinity">
-                                        <option>Family Law</option>
-                                        <option value="Family Law">Family Law</option>
-                                        <option value="Business Law">Business Law</option>
-                                        <option value="Civil Litigation">Civil Litigation</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-wrap">
-                                    <textarea class="form-input" id="feedback-2-message" name="message"
-                                        data-constraints=""></textarea>
-                                    <label class="form-label" for="feedback-2-message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <button class="button button-block button-primary" type="submit">Request a Free
-                                            Consultation</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+<section class="py-5" style="background: #F0F4F8; margin:10rem 0 ;">
+    <div class="section  py-5" >
+        <div class="container">
+            <div class="row items">
+                <div class="col-12">
+                    <div class="section-heading text-center">
+                        <h3 class="mb-5">Pricing</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="col-xl-5 d-none d-xl-block">
-                <div style="margin-top: -40px;"><img src="images/home-4-472x753.png" alt="" width="472" height="753" />
+                <div class="col-lg-4 col-md-6 col-12 item">
+                    <!-- Begin pricing item -->
+                    <div class="pricing-item item-style">
+                        <header class="pricing-item-header">
+                            <div class="pricing-item-heading">Basic</div>
+                            <div class="pricing-item-price"><small>from</small> 50$</div>
+                        </header>
+                        <div class="pricing-item-h ">
+                            <div class="pricing-item-content">
+                                <ul class="pricing-item-list pricing-1">
+                                    <li class="active">
+                                        <i class="fa-solid fa-check"></i>
+                                        Concept development
+                                    </li>
+                                    <li class="active">
+                                        <i class="fa-solid fa-check"></i>
+                                        UI/UX design
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-check"></i>
+                                        Configuration management
+                                    </li>
+                                    <li>
+                                        <i class="fa-solid fa-check"></i>
+                                        Software quality assurance
+                                    </li>
+                                    <li>
+                                         <i class="fa-solid fa-check"></i>
+                                        App integration
+                                    </li>
+                                </ul>
+                            </div>
+                            <footer class="pricing-item-footer">
+                                <a href="#!" class="btn btn-large btn-with-icon btn-wide ripple">
+                                    <span>Get Starter</span>
+                                    <svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9">
+                                        <use xlink:href="assets/img/sprite.svg#arrow-right"></use>
+                                    </svg>
+                                    <span class="el-ripple-circle" style="left: 272.4px; top: 61px;"></span></a>
+                            </footer>
+                        </div>
+                    </div><!-- End pricing item -->
+                </div>
+
+
+                <div class="col-lg-4 col-md-6 col-12 item">
+                    <!-- Begin pricing item -->
+                    <div class="pricing-item item-style">
+                        <div class="pricing-item-badge">Popular</div>
+                        <header class="pricing-item-header">
+                            <div class="pricing-item-heading">Optimal</div>
+                            <div class="pricing-item-price"><small>from</small> 100$</div>
+                        </header>
+                        <div class="pricing-item-h pricing-2">
+                            <div class="pricing-item-content">
+                                <ul class="pricing-item-list">
+                                    <li class="active">
+                                         <i class="fa-solid fa-check"></i>
+                                        Concept development
+                                    </li>
+                                    <li class="active">
+                                         <i class="fa-solid fa-check"></i>
+                                        UI/UX design
+                                    </li>
+                                    <li class="active">
+                                         <i class="fa-solid fa-check"></i>
+                                        Configuration management
+                                    </li>
+                                    <li>
+                                         <i class="fa-solid fa-check"></i>
+                                        Software quality assurance
+                                    </li>
+                                    <li>
+                                         <i class="fa-solid fa-check"></i>
+                                        App integration
+                                    </li>
+                                </ul>
+                            </div>
+                            <footer class="pricing-item-footer">
+                                <a href="#!" class="btn btn-border btn-large btn-with-icon btn-wide ripple">
+                                    <span>Get Starter</span>
+                                    <svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9">
+                                        <use xlink:href="assets/img/sprite.svg#arrow-right"></use>
+                                    </svg>
+                                    <span class="el-ripple-circle" style="left: 359.412px; top: 49px;"></span></a>
+                            </footer>
+                        </div>
+                    </div><!-- End pricing item -->
+                </div>
+                <div class="col-lg-4 col-md-12 col-12 item">
+                    <!-- Begin pricing item -->
+                    <div class="pricing-item item-style">
+                        <header class="pricing-item-header">
+                            <div class="pricing-item-heading">Ultimate</div>
+                            <div class="pricing-item-price"><small>from</small> 200$</div>
+                        </header>
+                        <div class="pricing-item-h pricing-3">
+                            <div class="pricing-item-content">
+                                <ul class="pricing-item-list">
+                                    <li class="active">
+                                         <i class="fa-solid fa-check"></i>
+                                        Concept development
+                                    </li>
+                                    <li class="active">
+                                         <i class="fa-solid fa-check"></i>
+                                        UI/UX design
+                                    </li>
+                                    <li class="active">
+                                         <i class="fa-solid fa-check"></i>
+                                        Configuration management
+                                    </li>
+                                    <li class="active">
+                                         <i class="fa-solid fa-check"></i>
+                                        Software quality assurance
+                                    </li>
+                                    <li class="active">
+                                         <i class="fa-solid fa-check"></i>
+                                        App integration
+                                    </li>
+                                    <li class="active">
+                                         <i class="fa-solid fa-check"></i>
+                                        Custom settings
+                                    </li>
+                                </ul>
+                            </div>
+                            <footer class="pricing-item-footer">
+                                <a href="#!" class="btn btn-large btn-with-icon btn-wide ripple">
+                                    <span>Get Starter</span>
+                                    <svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9">
+                                        <use xlink:href="assets/img/sprite.svg#arrow-right"></use>
+                                    </svg>
+                                    <span class="el-ripple-circle" style="left: 180.425px; top: -108px;"></span></a>
+                            </footer>
+                        </div>
+                    </div><!-- End pricing item -->
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-{{-- Contact Form end --}}
-
 
 
 @endsection
