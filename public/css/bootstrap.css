@@ -1672,6 +1672,7 @@ pre code {
     padding: 17px 25px 18px;
     vertical-align: top;
     border-top: 1px solid #d9d9d9;
+    color: #444;
 }
 
 .table thead th {
@@ -1704,10 +1705,6 @@ pre code {
 .table-bordered thead th,
 .table-bordered thead td {
     border-bottom-width: 2px;
-}
-
-.table-striped tbody tr:nth-of-type(odd) {
-    background-color: rgba(0, 0, 0, 0.05);
 }
 
 .table-hover tbody tr:hover {
@@ -1949,8 +1946,11 @@ pre code {
     }
 }
 
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
 .table-responsive {
-    display: block;
+    display: inline-table;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -3105,6 +3105,7 @@ tbody.collapse.show {
     border: 0;
     line-height: 2;
     cursor: pointer;
+    font-family: Lato, Helvetica, Arial, sans-serif;
 }
 
 .dropdown-item:focus,

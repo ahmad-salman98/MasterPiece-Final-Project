@@ -12539,6 +12539,16 @@ html.rd-navbar-fixed-linked .page {
 .rd-navbar-default .btn {
     font-size: 16px;
     color: #333;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: lato;
+}
+.rd-navbar-default .btn:focus,
+.rd-navbar-default .btn:active {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: 1px solid #cca876;
 }
 
 .rd-navbar-default.rd-navbar-fixed .rd-navbar-search {
@@ -16233,7 +16243,7 @@ html.boxed .rd-navbar--is-clone {
 
 /* thumnail image   */
 .owl-carousel .thumbnail-image {
-    box-shadow: 0 0 8px #2a2b2b;
+    box-shadow: 0 0 5px #2a2b2b85;
 }
 
 /* carousel end  */
@@ -16837,8 +16847,9 @@ h1 + .tabs-line {
     background: #d7d7d7;
 }
 
-.list-marked > li + li {
+.list-marked > li {
     margin-top: 10px;
+    font: initial;
 }
 
 .list-marked-2 {
@@ -17024,7 +17035,7 @@ p + .list-marked {
     width: 20rem;
     height: 3rem;
     line-height: 3rem;
-    background-color: #73a973;
+    background-color: #444;
     color: #fff;
     text-align: center;
     font-size: initial;
@@ -17043,7 +17054,7 @@ p + .list-marked {
 .pricing-item-price {
     font-size: 2rem;
     font-weight: bold;
-    color: #73a973;
+    color: #cca876;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
         sans-serif;
@@ -17093,8 +17104,8 @@ p + .list-marked {
 }
 
 .pricing-item-list li.active i {
-    color: #73a973;
-    fill: #73a973;
+    color: #cca876;
+    fill: #cca876;
 }
 
 .pricing-item-list li i {
@@ -17167,12 +17178,32 @@ p + .list-marked {
 .btn.btn-wide {
     display: block;
     width: 100%;
-    background: #73a973;
+    background: #444;
     color: #fff;
 }
 .btn.btn-wide:hover {
     display: block;
     width: 100%;
-    background: #5b925b;
-    color: #fff;
+    background: #6c6565;
+}
+
+/* ========================================= Back End ============================================= */
+
+.success-msg, .error-msg {
+    height: 5rem;
+    width: 100%;
+    background-color: #5cb85c50;
+    color: #1f1212;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+font-size: large;
+    text-transform: capitalize;
+    letter-spacing: .5px;
+    font-family: inherit;
+
+}
+
+.error-msg{
+    background-color: #FF4A4A50;
 }

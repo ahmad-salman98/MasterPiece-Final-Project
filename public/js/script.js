@@ -1337,37 +1337,9 @@ $window.on('load', function () {
     }
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function hideMsg() {
+    document.querySelectorAll('flash-msg').style.display = 'none';
+};
 
 
 

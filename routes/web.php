@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\appController;
-use App\Http\Controllers\userController;
+use App\Http\Controllers\AppController;
+use App\Http\Controllers\UserController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 // ----------------------- app routes -----------------------
 
 // ---------- main page -------------
-Route::get('/', [appController::class, 'index'])->name('home');
+Route::get('/', [AppController::class, 'index'])->name('home');
 
 // ---------- appointment page -------------
 Route::get('/appointment', function () {
@@ -36,16 +37,32 @@ Route::get('/contact', function () {
 
 // ---------- Checkout page -------------
 
-Route::get('/checkout', [appController::class, 'checkout'])->name('checkout');
+Route::get('/checkout', [AppController::class, 'checkout'])->name('checkout');
 
 
 // ---------- About page -------------
 
-Route::get('/about', [appController::class, 'about'])->name('about');
+Route::get('/about', [AppController::class, 'about'])->name('about');
 
 
 
 // ----------------------- User routes -----------------------
 
-// ---------- profile page -------------
-Route::get('/profile',[userController::class , 'profile'])->name('profile');
+// ---------- view profile page -------------
+Route::get('/profile/{id?}', [UserController::class, 'profile'])->name('profile');
+
+// ---------- login / signup page -------------
+Route::get('/register', [UserController::class, 'create'])->name('register');
+
+// ---------- login auth  -------------
+Route::post('/authenticate', [UserController::class, 'authenticate'])->name('authentication');
+
+// ---------- store new user -------------
+Route::post('/store', [UserController::class, 'store'])->name('store');
+
+// ---------- logout user -------------
+Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+
+// ---------- update profile info -------------
+Route::post('/updateProfile', [UserController::class, 'updateProfile'])->name('updateProfile');
+

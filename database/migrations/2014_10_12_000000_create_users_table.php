@@ -19,8 +19,15 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('rank')->default('silver');
+            $table->integer('coins')->default(0);
             $table->rememberToken();
             $table->timestamps();
+            $table->string('image')->default('logos/profilepic.jpg'); // it jpg not jpeg->???
+            $table->string('cover')->default('logos/coverpic.png');
+            $table->string('role')->default('user');
+            $table->string('google_id')->nullable();
+            $table->softDeletes();
         });
     }
 
