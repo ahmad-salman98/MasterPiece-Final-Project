@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Video;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
@@ -111,8 +112,74 @@ class UserController extends Controller
             $user->cover = $request->file('cover')->store('logos', 'public');
             $user->save();
             return back()->with('success', 'Profile cover was updated successfully');
-        } else {
-            return back()->with('error', 'Bad request');
         }
+        // in case of profile info update
+        else {
+
+            // dd($request);
+            $formFields = $request->validate(
+                [
+                    'first_name' => ['required', 'min:3'],
+                    'last_name' => ['required', 'min:3'],
+                ]
+            );
+            $user = Auth::user();
+            $user->name = ucfirst(strtolower($formFields['first_name'])) . ' ' . ucfirst(strtolower($formFields['last_name']));
+            $user->save();
+            return redirect()->back()->with('success', 'Profile was updated successfully');
+        }
+    }
+
+    // if the user want to change the password
+    public function updatePassword(Request $request)
+    {
+        $request->validate(
+            [
+                'oldPassword' => 'required',
+            ]
+        );
+
+        if (Hash::check($request->oldPassword, Auth::user()->password)) {
+            $request->validate([
+                'password' => 'required|confirmed|regex:/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/',
+            ], [
+                'password.regex' => 'The password should have minimum eight characters,
+                at least one letter, one number and one special character'
+            ]);
+
+            if (!Hash::check($request->password, Auth::user()->password)) {
+                User::whereId(auth()->user()->id)->update([
+                    'password' => Hash::make($request->password)
+                ]);
+                return redirect()->back()->with('success', 'password updated successfully');
+            }
+             else {
+                return redirect()->back()->with('error', 'New password can not be the same as current password!');
+            }
+        } else {
+            return back()->withErrors(['oldPassword' => 'incorrect password'])->onlyInput('oldPassword');
+        }
+
+        // Hash Password
+        // $formFields['password'] = Hash::make($formFields['password']);
+
+    }
+
+    //move to edit profile
+    public function editProfile()
+    {
+        return view('user.edit-profile', ['user' => Auth::user()]);
+    }
+
+
+    //view user's video
+    public function viewVideo($id, $userId)
+    {
+        $video = Video::findOrFail($id);
+        if (Auth::user()->id != $userId) {
+            $video->views = $video->views + 1;
+        }
+        $video->save();
+        return redirect($video->url);
     }
 }

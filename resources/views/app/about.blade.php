@@ -216,7 +216,7 @@
                                 <article class="icon-box-horizontal">
                                     <div class="unit unit-horizontal unit-spacing-md">
                                         <div class="unit-left">
-                                            <i class="fa-solid fa-handshake fa-2xl pt-4" style="color: #cca876"></i>
+                                            <i class="fa-solid fa-handshake fa-2xl pt-4" style="color: # FF4B2B"></i>
                                         </div>
                                         <div class="unit-body">
                                             <h5><a href="#">Our Beliefs</a></h5>
@@ -231,7 +231,7 @@
                                 <article class="icon-box-horizontal">
                                     <div class="unit unit-horizontal unit-spacing-md">
                                         <div class="unit-left">
-                                            <i class="fa-solid fa-briefcase fa-2xl pt-4" style="color: #cca876"></i>
+                                            <i class="fa-solid fa-briefcase fa-2xl pt-4" style="color: # FF4B2B"></i>
                                         </div>
                                         <div class="unit-body">
                                             <h5><a href="#">Rich Experience</a></h5>
@@ -246,7 +246,7 @@
                                 <article class="icon-box-horizontal">
                                     <div class="unit unit-horizontal unit-spacing-md">
                                         <div class="unit-left">
-                                            <i class="fa-solid fa-chart-line fa-2xl pt-4" style="color: #cca876"></i>
+                                            <i class="fa-solid fa-chart-line fa-2xl pt-4" style="color: # FF4B2B"></i>
                                         </div>
                                         <div class="unit-body">
                                             <h5><a href="#">Great Results</a></h5>

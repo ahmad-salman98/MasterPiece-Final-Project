@@ -176,7 +176,7 @@
 
 {{-- About us start --}}
 
-<section class="bg-displaced-wrap" style="margin-bottom:10rem; background: #F0F4F8" >
+<section class="bg-displaced-wrap" style="margin-bottom:10rem; background: #F0F4F8">
     <div class="bg-displaced-body">
         <div class="container">
             <div class="px-5 ">
@@ -218,31 +218,39 @@
             <div class="container">
                 <div class="row row-40">
                     <div class="col-sm-6 col-md-3">
-                        <div class="box-counter box-counter-inverse"><span
-                                class="novi-icon icon icon-lg icon-primary mercury-icon-group"></span>
-                            <div class="text-large counter">1450</div>
-                            <p class="box-header">Happy Clients</p>
+                        <div class="box-counter box-counter-inverse">
+                            <span class="novi-icon icon icon-lg icon-primary">
+                                <i class="fa-solid fa-users" style="color:white"></i>
+                            </span>
+                            <div class="text-large counter">{{count($users)}}</div>
+                            <p class="box-header"> Active Users</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3">
-                        <div class="box-counter box-counter-inverse"><span
-                                class="novi-icon icon icon-lg-smaller icon-primary mercury-icon-scales"></span>
+                        <div class="box-counter box-counter-inverse">
+                            <span class="novi-icon icon icon-lg-smaller icon-primary ">
+                                <i class="fa-solid fa-calendar-check" style="color:white"></i>
+                            </span>
                             <div class="text-large counter">23</div>
                             <p class="box-header">Years of Experience</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3">
-                        <div class="box-counter box-counter-inverse"><span
-                                class="novi-icon icon icon-lg-smaller icon-primary mercury-icon-partners"></span>
-                            <div class="text-large counter counter-percent">98</div>
-                            <p class="box-header">Successful Cases</p>
+                        <div class="box-counter box-counter-inverse">
+                            <span class="novi-icon icon icon-lg-smaller icon-primary">
+                                <i class="fa-solid fa-handshake" style="color:white"></i>
+                            </span>
+                            <div class="text-large counter ">15</div>
+                            <p class="box-header"> Partner Institution</p>
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-3">
-                        <div class="box-counter box-counter-inverse"><span
-                                class="novi-icon icon icon-lg icon-primary mercury-icon-case"></span>
-                            <div class="text-large counter">7500</div>
-                            <p class="box-header">Personal Injury Cases</p>
+                        <div class="box-counter box-counter-inverse">
+                            <span class="novi-icon icon icon-lg icon-primary">
+                                <i class="fa-solid fa-clapperboard" style="color:white"></i>
+                            </span>
+                            <div class="text-large counter">45</div>
+                            <p class="box-header">Show Production</p>
                         </div>
                     </div>
                 </div>
@@ -253,121 +261,44 @@
 {{-- Statistics Section end --}}
 
 
+
 {{-- Gallery start --}}
 
-<section class="section section-sm section-top-0 section-fluid section-relative bg-gray-4" style="background: #F0F4F8; margin:10rem 0">
+<section class="section section-sm section-top-0 section-fluid section-relative bg-gray-4"
+    style="background: #F0F4F8; margin:10rem 0">
     <div class="container py-5 my-5">
         <h3 class="text-center">Our Top Streamers</h3>
         <!-- Owl Carousel-->
         <div class="owl-carousel owl-classic owl-dots-secondary " data-items="1" data-sm-items="1" data-md-items="2"
             data-lg-items="3" data-xl-items="4" data-xxl-items="5" data-stage-padding="15" data-xxl-stage-padding="0"
             data-margin="30" data-autoplay="true" data-nav="true" data-dots="true">
-            <!-- Thumbnail Classic-->
-            {{-- <article class="thumbnail thumbnail-mary">
-                <div class="thumbnail-mary-figure">
-                    <img style="max: width 100%; ; height: 350px; object-fit:cover" src="images/ahmad-salman.jpeg"
-                        alt="" width="270" height="195" />
-                </div>
 
-                <div class="thumbnail-mary-caption">
-                    <a class="icon" href="#" data-lightgallery="item">
-                        <p class="text-dark ">Ahmad </p>
-                    </a>
-                </div>
-            </article> --}}
+            @foreach($topStreamers as $user)
             <div class="thumbnail thumbnail-variant-2 ">
                 <figure class="thumbnail-image">
-                    <img style="max-width:100%; height:350px; object-fit:cover" src="./images/banner1.jpg" alt="" />
-                </figure>
-                <div class="thumbnail-inner">
-                    <div class="link-group"><span
-                            class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
-                            class="link-white" href="tel:+962778086352">+962 (77) 808–6352</a></div>
-                    <div class="link-group"><span class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
-                            class="link-white" href="mailto:#">info@demolink.org</a></div>
-                </div>
-                <div class="thumbnail-caption">
-                    <p class="text-header"><a href="#">Amanda Smith</a></p>
-                    <div class="divider divider-md bg-teak"></div>
-                    <p class="text-caption">Paralegal</p>
-                </div>
-            </div>
-
-            <div class="thumbnail thumbnail-variant-2 ">
-                <figure class="thumbnail-image">
-                    <img style="max-width:100%; height:350px; object-fit:cover" src="./images/ahmad-salman.jpeg"
+                    <img style="max-width:100%; height:350px; object-fit:cover" src="{{asset('storage/'.$user->image)}}"
                         alt="" />
                 </figure>
                 <div class="thumbnail-inner">
-                    <div class="link-group"><span
-                            class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
-                            class="link-white" href="tel:#">+962 (77) 808–6352</a></div>
-                    <div class="link-group"><span class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
-                            class="link-white" href="mailto:#">info@demolink.org</a></div>
-                </div>
-                <div class="thumbnail-caption">
-                    <p class="text-header"><a href="#">Amanda Smith</a></p>
-                    <div class="divider divider-md bg-teak"></div>
-                    <p class="text-caption">Paralegal</p>
-                </div>
-            </div>
+                    <div class="link-group"><span class="novi-icon icon icon-xxs icon-primary"></span>
+                        {{-- material-icons-local_phone --}}
+                        {{-- <a class="link-white" href="tel:+962778086352">+962 (77) 808–6352</a> --}}
+                    </div>
+                    <div class="link-group">
+                        <span class="novi-icon icon icon-xxs icon-primary  ">
+                            <i class="fa-regular fa-envelope" style="color:#FF4B2B"></i>
 
-            <div class="thumbnail thumbnail-variant-2 ">
-                <figure class="thumbnail-image">
-                    <img style="max-width:100%; height:350px; object-fit:cover" src="./images/ahmad-salman.jpeg"
-                        alt="" />
-                </figure>
-                <div class="thumbnail-inner">
-                    <div class="link-group"><span
-                            class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
-                            class="link-white" href="tel:#">+962 (77) 808–6352</a></div>
-                    <div class="link-group"><span class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
-                            class="link-white" href="mailto:#">info@demolink.org</a></div>
+                        </span>
+                        <a class="link-white" href="mailto:{{$user->email}}">{{$user->email}}</a>
+                    </div>
                 </div>
                 <div class="thumbnail-caption">
-                    <p class="text-header"><a href="#">Amanda Smith</a></p>
+                    <p class="text-header"><a href="profile/{{$user->id}}">{{$user->name}}</a></p>
                     <div class="divider divider-md bg-teak"></div>
-                    <p class="text-caption">Paralegal</p>
+                    <p class="text-caption">{{$user->rank}}</p>
                 </div>
             </div>
-
-            <div class="thumbnail thumbnail-variant-2 ">
-                <figure class="thumbnail-image">
-                    <img style="max-width:100%; height:350px; object-fit:cover" src="./images/ahmad-salman.jpeg"
-                        alt="" />
-                </figure>
-                <div class="thumbnail-inner">
-                    <div class="link-group"><span
-                            class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
-                            class="link-white" href="tel:#">+962 (77) 808–6352</a></div>
-                    <div class="link-group"><span class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
-                            class="link-white" href="mailto:#">info@demolink.org</a></div>
-                </div>
-                <div class="thumbnail-caption">
-                    <p class="text-header"><a href="#">Amanda Smith</a></p>
-                    <div class="divider divider-md bg-teak"></div>
-                    <p class="text-caption">Paralegal</p>
-                </div>
-            </div>
-
-            <div class="thumbnail thumbnail-variant-2 ">
-                <figure class="thumbnail-image">
-                    <img style="max-width:100%; height:350px; object-fit:cover" src="./images/ahmad-salman.jpeg"
-                        alt="" />
-                </figure>
-                <div class="thumbnail-inner">
-                    <div class="link-group"><span
-                            class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
-                            class="link-white" href="tel:#">+962 (77) 808–6352</a></div>
-                    <div class="link-group"><span class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
-                            class="link-white" href="mailto:#">info@demolink.org</a></div>
-                </div>
-                <div class="thumbnail-caption">
-                    <p class="text-header"><a href="#">Amanda Smith</a></p>
-                    <div class="divider divider-md bg-teak"></div>
-                    <p class="text-caption">Paralegal</p>
-                </div>
-            </div>
+            @endforeach
 
         </div>
     </div>
@@ -465,8 +396,9 @@
 
 {{-- Pricing start --}}
 
+
 <section class="py-5" style="background: #F0F4F8; margin:10rem 0 ;">
-    <div class="section  py-5" >
+    <div class="section  py-5">
         <div class="container">
             <div class="row items">
                 <div class="col-12">
@@ -474,6 +406,7 @@
                         <h3 class="mb-5">Pricing</h3>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6 col-12 item">
                     <!-- Begin pricing item -->
                     <div class="pricing-item item-style">
@@ -501,18 +434,19 @@
                                         Software quality assurance
                                     </li>
                                     <li>
-                                         <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-check"></i>
                                         App integration
                                     </li>
                                 </ul>
                             </div>
                             <footer class="pricing-item-footer">
-                                <a href="#!" class="btn btn-large btn-with-icon btn-wide ripple">
+                                <a href="#!" class="btn btn-large btn-with-icon btn-wide ripple" id="basicPlane">
                                     <span>Get Starter</span>
                                     <svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9">
                                         <use xlink:href="assets/img/sprite.svg#arrow-right"></use>
                                     </svg>
-                                    <span class="el-ripple-circle" style="left: 272.4px; top: 61px;"></span></a>
+                                    <span class="el-ripple-circle" style="left: 272.4px; top: 61px;"></span>
+                                </a>
                             </footer>
                         </div>
                     </div><!-- End pricing item -->
@@ -522,7 +456,7 @@
                 <div class="col-lg-4 col-md-6 col-12 item">
                     <!-- Begin pricing item -->
                     <div class="pricing-item item-style">
-                        <div class="pricing-item-badge">Popular</div>
+                        <div class="pricing-item-badge">Best Deal</div>
                         <header class="pricing-item-header">
                             <div class="pricing-item-heading">Optimal</div>
                             <div class="pricing-item-price"><small>from</small> 100$</div>
@@ -531,34 +465,36 @@
                             <div class="pricing-item-content">
                                 <ul class="pricing-item-list">
                                     <li class="active">
-                                         <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-check"></i>
                                         Concept development
                                     </li>
                                     <li class="active">
-                                         <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-check"></i>
                                         UI/UX design
                                     </li>
                                     <li class="active">
-                                         <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-check"></i>
                                         Configuration management
                                     </li>
                                     <li>
-                                         <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-check"></i>
                                         Software quality assurance
                                     </li>
                                     <li>
-                                         <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-check"></i>
                                         App integration
                                     </li>
                                 </ul>
                             </div>
                             <footer class="pricing-item-footer">
-                                <a href="#!" class="btn btn-border btn-large btn-with-icon btn-wide ripple">
+                                <a href="#!" class="btn btn-border btn-large btn-with-icon btn-wide ripple"
+                                    id="obtimalPlane">
                                     <span>Get Starter</span>
                                     <svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9">
                                         <use xlink:href="assets/img/sprite.svg#arrow-right"></use>
                                     </svg>
-                                    <span class="el-ripple-circle" style="left: 359.412px; top: 49px;"></span></a>
+                                    <span class="el-ripple-circle" style="left: 359.412px; top: 49px;"></span>
+                                </a>
                             </footer>
                         </div>
                     </div><!-- End pricing item -->
@@ -574,38 +510,39 @@
                             <div class="pricing-item-content">
                                 <ul class="pricing-item-list">
                                     <li class="active">
-                                         <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-check"></i>
                                         Concept development
                                     </li>
                                     <li class="active">
-                                         <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-check"></i>
                                         UI/UX design
                                     </li>
                                     <li class="active">
-                                         <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-check"></i>
                                         Configuration management
                                     </li>
                                     <li class="active">
-                                         <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-check"></i>
                                         Software quality assurance
                                     </li>
                                     <li class="active">
-                                         <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-check"></i>
                                         App integration
                                     </li>
                                     <li class="active">
-                                         <i class="fa-solid fa-check"></i>
+                                        <i class="fa-solid fa-check"></i>
                                         Custom settings
                                     </li>
                                 </ul>
                             </div>
                             <footer class="pricing-item-footer">
-                                <a href="#!" class="btn btn-large btn-with-icon btn-wide ripple">
+                                <a href="#!" class="btn btn-large btn-with-icon btn-wide ripple" id="ultimatePlane">
                                     <span>Get Starter</span>
                                     <svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9">
                                         <use xlink:href="assets/img/sprite.svg#arrow-right"></use>
                                     </svg>
-                                    <span class="el-ripple-circle" style="left: 180.425px; top: -108px;"></span></a>
+                                    <span class="el-ripple-circle" style="left: 180.425px; top: -108px;"></span>
+                                </a>
                             </footer>
                         </div>
                     </div><!-- End pricing item -->
@@ -613,7 +550,151 @@
             </div>
         </div>
     </div>
+
+    {{-- modal setup --}}
+
+    <button type="button" class="btn text-success bg-transparent" style="box-shadow: none;" data-toggle="modal"
+        onclick="focus()" data-target="#joinModal" autofocus id="modalTrigger">Inschrijven
+    </button>
+
+    <div class="modal" id="joinModal" tabindex="0" role="dialog" aria-labelledby="joinModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle"> </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="payment" method="post" onsubmit="triggerAlert()">
+                        @csrf
+                        <input type="hidden" name="plan" id="paymentPlan">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" name="name" placeholder="John Doe"
+                                autofocus value="{{Auth::user()->name}}" disabled>
+                        </div>
+
+                        <div class=" form-group">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="text" class="form-control" id="phoneNumber" name="phone"
+                                placeholder="enter your phone number started with 07" required minlength="7">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address </label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="john-doe@email.com" value="{{Auth::user()->email}} " disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="studio">Choose a studio location to pay at</label>
+                            <select class="form-control" id="studio" name="studio_id" required>
+                                @foreach($studios as $studio)
+                                <option value="{{$studio->id}}">{{$studio->location}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="confirmPayment">Submit</button>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </section>
 
+
+@auth
+<script>
+    const modalBtn = document.getElementById('modalTrigger');
+    modalBtn.style.display = 'none';
+    const basicPlane = document.getElementById('basicPlane');
+    const obtimalPlane = document.getElementById('obtimalPlane');
+    const ultimatePlane = document.getElementById('ultimatePlane');
+    const modalTitle = document.getElementById('modalTitle');
+    const paymentPlan = document.getElementById('paymentPlan');
+
+
+    // for basic plan
+    basicPlane.addEventListener('click', ()=>{
+        modalBtn.click();
+modalTitle.innerText ="Complete payment - Basic plane";
+paymentPlan.value='basic';
+    });
+
+
+    // for obtimal plan
+    obtimalPlane.addEventListener('click', ()=>{
+        modalBtn.click();
+modalTitle.innerText ="Complete payment - Obtimal plane";
+paymentPlan.value='obtimal';
+    });
+
+
+    // for ultimate plan
+    ultimatePlane.addEventListener('click', ()=>{
+        modalBtn.click();
+modalTitle.innerText ="Complete payment - Ultimate plane";
+paymentPlan.value='ultimate';
+    });
+
+    // alert when confirm payment
+
+    const triggerAlert = ()=>{
+
+        Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Your request has been sent',
+        showConfirmButton: false,
+        timer: 1500,
+        customClass:'swal-alert'
+        })
+    };
+</script>
+@endauth
+
+@guest
+<script>
+    const basicPlane = document.getElementById('basicPlane');
+    const obtimalPlane = document.getElementById('obtimalPlane');
+    const ultimatePlane = document.getElementById('ultimatePlane');
+
+    basicPlane.addEventListener('click', ()=>{
+Swal.fire({
+icon: 'info',
+title: 'Authorization Failed',
+text: 'Please login first!',
+footer: '<a href="/register">Login from here</a>',
+customClass: 'swal-alert'
+})
+  });
+
+    obtimalPlane.addEventListener('click', ()=>{
+Swal.fire({
+icon: 'info',
+title: 'Authorization Failed',
+text: 'Please login first!',
+footer: '<a href="/register">Login from here</a>',
+customClass: 'swal-alert'
+})
+  });
+
+    ultimatePlane.addEventListener('click', ()=>{
+Swal.fire({
+icon: 'info',
+title: 'Authorization Failed',
+text: 'Please login first!',
+footer: '<a href="/register">Login from here</a>',
+customClass: 'swal-alert'
+})
+  });
+</script>
+
+@endguest
 
 @endsection

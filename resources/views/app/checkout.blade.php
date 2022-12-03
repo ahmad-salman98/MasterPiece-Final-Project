@@ -41,7 +41,7 @@
 
             {{-- Bill details --}}
             <div class=" my-5 offset-md-1 col-md-5 col-12 align-self-center summary ">
-                <h4 class="" style="background: #cca876">Summary</h4>
+                <h4 class="" style="background: # FF4B2B">Summary</h4>
                 <div class="w-100 mt-0 ">
                     <ul>
                         <li>Name <span>Ahmad Salman</span></li>

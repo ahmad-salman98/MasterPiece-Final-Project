@@ -18,7 +18,9 @@
         {{-- font awesome --}}
         <script src="https://kit.fontawesome.com/0a9ca5a95a.js" crossorigin="anonymous"></script>
 
-
+        {{-- Sweet alert --}}
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+        <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
     </head>
 
     <body>
@@ -145,7 +147,7 @@
 
                                                 <div class="dropdown-menu">
                                                     <a class="dropdown-item" href="/profile">View profile</a>
-                                                    <a class="dropdown-item" href="/profile">Edit profile</a>
+                                                    <a class="dropdown-item" href="edit-profile">Edit profile</a>
                                                     <div class="dropdown-divider"></div>
                                                     <form method="POST" action="/logout">
                                                         @csrf

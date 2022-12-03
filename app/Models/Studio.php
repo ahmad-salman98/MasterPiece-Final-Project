@@ -17,4 +17,9 @@ class Studio extends Model
         return $this->hasMany(Appointment::class);
     }
 
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
+    
 }

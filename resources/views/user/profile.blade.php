@@ -9,17 +9,24 @@
     <div class="row profile-banner">
         <div class="col-12" id="profile-cover" {{-- profile cover --}}
             style="background-image:url('{{asset('storage/'.$user->cover)}}'); height:10rem;">
-            {{-- update-cover-button --}}
-            <button class='btn btn-primary' id="update-cover-button">update cover <i
-                    class="fa-solid fa-image ml-2"></i></button>
+
             <div class="col-3 " id="profile-pic">
                 {{-- profile picture --}}
                 <img class="p-0 m-0" src="{{asset('storage/'.$user->image)}}" alt="">
             </div>
 
-            {{-- update profile picture icon --}}
-            <div id="update-profile-icon" class="btn btn-primary"><i class="fa-solid fa-camera "></i></div>
 
+
+            {{-- update-cover-button --}}
+            @if($user->id ==Auth::user()->id)
+            <button class='btn btn-primary' id="update-cover-button">update cover
+                <i class="fa-solid fa-image ml-2"></i>
+            </button>
+
+            {{-- update profile picture icon --}}
+            <div id="update-profile-icon" class="btn btn-primary">
+                <i class="fa-solid fa-camera "></i>
+            </div>
             {{-- update profile picture form --}}
             <form action="/updateProfile" method="POST" role="form" enctype="multipart/form-data" id="updateImage">
                 @csrf
@@ -27,15 +34,15 @@
                 <input type="file" name="cover" id="chooseCover">
                 <input type="submit" value="submit">
             </form>
-            {{-- user name --}}
-            <div id="profile-info">
-                <h3 class="text-dark" id="profile-name"> {{$user->name}} </b></h3>
-            </div>
 
             {{-- edit profile icon --}}
-            @if($user->id == Auth::user()->id)
-            <a href="#" class="edit-profile"><i class="fa-solid fa-gear fa-2xl"></i></a>
+            <a href="edit-profile" id="editProfileGear" class="edit-profile"><i class="fa-solid fa-gear fa-2xl"></i></a>
             @endif
+
+            {{-- user name --}}
+            <div id="profile-info">
+                <h3 class="text-dark " id="profile-name"> {{$user->name}} </b></h3>
+            </div>
 
             <div>
                 <div class="main-profile {{$user->id == Auth::user()->id ? '' : 'other-user-profile'}} ">
@@ -87,6 +94,7 @@
                             <div class="col-lg-12">
                                 <div class="clips">
                                     <div class="row" id="popular-clips">
+
                                         <div class="col-lg-12">
                                             <div class="heading-section">
                                                 <h4 class="dark" id="more-popular">
@@ -103,26 +111,50 @@
                                             </div>
                                             @endif
                                         </div>
-
                                         @foreach ($user->videos as $video)
-                                        <div class="col-xl-3 col-lg-4 col-sm-6">
-                                            <div class="item">
+                                        <div class=" col-lg-4 col-md-6 col-sm-12 py-5">
+                                            {{-- <div class="item">
                                                 <div class="thumb">
                                                     <img src="images/profile.jpg" alt="" class="clip">
-                                                    <a href={{$video->url}}
+                                                    <a href={{"/show/video/$video->id/$user->id" }}
                                                         target="_blank"><i class="fa fa-play"></i></a>
                                                 </div>
                                                 <div class="down-content">
                                                     <h4>First Clip</h4>
                                                     <span>
                                                         <i class="fa fa-eye"></i>
-                                                        250
+                                                        {{$video->views}}
                                                     </span>
+                                                </div>
+                                            </div> --}}
+
+                                            <div class="container">
+                                                <div class="row img-row">
+                                                    <img src="images/profile.jpg" alt="" class="">
+                                                </div>
+                                                <div class="row video-ifo d-flex">
+                                                    <div class="user-video-img ">
+                                                        <img class="border-rounded" src="images/profile.jpg" alt=""
+                                                            class="clip">
+                                                    </div>
+                                                    <div class="video-text ">
+                                                        <div>
+                                                            <h6 class="text-truncate w-100"> Title goes here  </h6
+                                                                class="">
+                                                        </div>
+                                                        <div>
+                                                            <b class=" text-truncate"> {{$video->user->name}} </b>
+                                                        </div>
+                                                        <div>
+                                                            {{$video->views}} views . 22/11/2022
+                                                        </div>
+
+
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                         @endforeach
-
 
                                         <div class="col-lg-12">
                                             <div class="main-button w-100 my-5 pt-5">
@@ -216,6 +248,17 @@
         document.getElementById('chooseCover').click();
     });
 document.getElementById('chooseCover').onchange = ()=>{ document.getElementById('updateImage').submit()}
+
+//edit prifile
+
+document.getElementById('editProfileBtn').style.display = 'none';
+document.getElementById('editProfileGear').addEventListener('click', ()=>{
+    document.getElementById('editProfileBtn').click();
+})
+
+
+
+
 
 </script>
 
