@@ -31,7 +31,6 @@
             selectFilter: $("select"),
             rdInputLabel: $(".form-label"),
             customToggle: $("[data-custom-toggle]"),
-            rdMailForm: $(".rd-mailform"),
             regula: $("[data-constraints]"),
             preloader: $(".preloader"),
             pageTitles: $('.page-title'),
@@ -379,11 +378,6 @@
                             return;
                         }
                     }
-
-                    if ($this.parents('.rd-mailform').hasClass('success')) {
-                        return;
-                    }
-
                     if ((results = $this.regula('validate')).length) {
                         for (i = 0; i < results.length; i++) {
                             $this.siblings(".form-validation").text(results[i].message).parent().addClass("has-error")
@@ -1255,7 +1249,7 @@
 
 
 
-$window.on('load', function () {
+window.onload = (function () {
     // Progress bar
     if (plugins.progressLinear.length) {
         for (var i = 0; i < plugins.progressLinear.length; i++) {

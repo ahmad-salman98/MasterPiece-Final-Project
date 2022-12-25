@@ -14,10 +14,18 @@ Route::get('/', [AppController::class, 'index'])->name('home');
 Route::post('payment', [AppController::class, 'payment'])->name('payment');
 
 // ---------- appointment page -------------
-Route::get('/appointment', function () {
 
-    return view('app.appointment',);
-})->name('appointment');
+//view appointment page
+Route::get('/appointment', [AppController::class, 'appointment'])->name('appointment')->middleware('auth');
+
+//make appointment
+Route::post('/make-appointment', [AppController::class, 'makeAppointment'])->name('makeAppointment');
+
+
+//confirm appointment
+Route::post('/confirm-appointment', [AppController::class, 'confirmAppointment'])->name('confirmAppointment');
+
+
 
 
 // ---------- Contact page -------------
@@ -29,7 +37,7 @@ Route::get('/contact', function () {
 
 // ---------- Checkout page -------------
 
-Route::get('/checkout', [AppController::class, 'checkout'])->name('checkout');
+Route::get('/checkout', [AppController::class, 'checkout'])->name('checkout')->middleware('auth');
 
 
 
@@ -37,6 +45,12 @@ Route::get('/checkout', [AppController::class, 'checkout'])->name('checkout');
 // ---------- About page -------------
 
 Route::get('/about', [AppController::class, 'about'])->name('about');
+
+
+// ---------- Contact page -------------
+
+Route::post('/contact', [AppController::class, 'contact'])->name('contact');
+
 
 
 // ----------------------- User routes -----------------------
@@ -54,7 +68,7 @@ Route::post('/authenticate', [UserController::class, 'authenticate'])->name('aut
 Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
 // ---------- view profile page -------------
-Route::get('/profile/{id?}', [UserController::class, 'profile'])->name('profile');
+Route::get('/profile/{id?}', [UserController::class, 'profile'])->name('profile')->middleware('auth');
 
 // ---------- update profile info -------------
 Route::post('/updateProfile', [UserController::class, 'updateProfile'])->name('updateProfile');
@@ -66,4 +80,8 @@ Route::get('/show/video/{id}/{userId}', [UserController::class, 'viewVideo'])->n
 Route::post('/updatePassword', [UserController::class, 'updatePassword'])->name('updatePassword');
 
 // ---------- edit profile info -------------
-Route::get('/edit-profile', [UserController::class, 'editProfile'])->name('editProfile');
+Route::get('/edit-profile', [UserController::class, 'editProfile'])->name('editProfile')->middleware('auth');
+
+// upload new video
+
+Route::post('/add-video', [UserController::class, 'addVideo'])->name('addVideo');

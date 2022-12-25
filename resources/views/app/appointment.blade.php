@@ -12,63 +12,57 @@
     }
 </style>
 
-{{-- Breadcrumb --}}
-
-<section class="section-30 section-md-40 section-lg-66 section-xl-bottom-90 bg-gray-dark page-title-wrap"
-    style="background-image: url(images/banner2.jpg);">
-    <div class="container">
-        <div class="page-title">
-            <h2>Appointment</h2>
-        </div>
-    </div>
-</section>
-
 {{-- Content --}}
 <section class="bg-whisper" style="margin: 10rem 0 ">
     <div class="container">
         <div class="row">
             <div class="col-xl-5 d-none d-xl-block">
                 <div style="height:100%"><img style="height:100%; max-width:100%; object-fit:cover"
-                        src="images/banner1.jpg" alt="" width="472" height="753" />
+                        src="images/cameraman.jpg" alt="" width="472" height="753" />
                 </div>
             </div>
             <div class="col-md-10 col-lg-9 col-xl-7">
                 <div class="section-50 section-md-75 section-xl-100">
                     <h3>Book an appointment </h3>
-                    <form class="rd-mailform" data-form-output="form-output-global" data-form-type="contact"
-                        method="post" action="bat/rd-mailform.php">
+                    <form class="rd-mailform" method="post" action="make-appointment">
+                        @csrf
                         <div class="row row-30">
                             <div class="col-md-6">
                                 <div class="form-wrap">
+                                    <label class="" for="request-form-name">
+                                        <span class="required-field">*</span>
+                                        Name
+                                    </label>
                                     <input class="form-input" id="request-form-name" type="text" name="name"
-                                        data-constraints="">
-                                    <label class="form-label" for="request-form-name">Name</label>
+                                        placeholder="Your full name" value="{{$user->name}}" required>
                                 </div>
                             </div>
+
                             <div class="col-md-6">
                                 <div class="form-wrap">
+                                    <label class="" for="request-form-phone">
+                                        <span class="required-field">*</span>
+                                        Phone
+                                    </label>
                                     <input class="form-input" id="request-form-phone" type="text" name="phone"
-                                        data-constraints="">
-                                    <label class="form-label" for="request-form-phone">Phone</label>
+                                        placeholder="Enter your phone number" required>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-wrap">
-                                    <input class="form-input" id="request-form-email" type="email" name="email"
-                                        data-constraints="">
-                                    <label class="form-label" for="request-form-email">Email</label>
-                                </div>
-                            </div>
+
+
                             <div class="col-md-6">
                                 <div class="form-wrap form-wrap-outside">
                                     <!--Select 2-->
-                                    <select class="form-input select-filter" id="request-form-select"
-                                        data-minimum-results-for-search="Infinity">
-                                        <option disabled selected>Choose a studio</option>
-                                        <option value="Family Law">Zarqa - Russiefeh</option>
-                                        <option value="Business Law">Amman - khalda</option>
-                                        <option value="Civil Litigation">Amman - down town</option>
+                                    <label class="" for="studio">
+                                        <span class="required-field">*</span>
+                                        Choose a studio
+                                    </label>
+                                    <select class="form-input select-filter" id="studio" required name="studio">
+                                        @foreach($studios as $studio)
+                                        <option value="{{$studio->id}}">{{$studio->location}}</option>
+                                        @endforeach
                                     </select>
+                                    <div class="arrow"><i class="fa-solid fa-angle-down"></i></div>
                                 </div>
                             </div>
 
@@ -76,20 +70,11 @@
 
                             <div class="col-md-6">
                                 <div class="form-wrap">
-                                    <!--Select 2-->
-                                    <select class="form-input select-filter" id="request-form-select"
-                                        data-minimum-results-for-search="Infinity">
-                                        <option disabled selected>Time start</option>
-                                        <option value="#">8:00 am</option>
-                                        <option value="#">9:00 am</option>
-                                        <option value="#">10:00 am</option>
-                                        <option value="#">11:00 am</option>
-                                        <option value="#">12:00 pm</option>
-                                        <option value="#">1:00 pm</option>
-                                        <option value="#">2:00 pm</option>
-                                        <option value="#">3:00 pm</option>
-                                        <option value="#">4:00 pm</option>
-                                    </select>
+                                    <label class="" for="date">
+                                        <span class="required-field">*</span>Date
+                                    </label>
+                                    <input class="form-input bg-white" id="date" type="date" {{$user->coins}} required
+                                    name="date">
                                 </div>
                             </div>
 
@@ -97,38 +82,34 @@
                             <div class="col-md-6">
                                 <div class="form-wrap">
                                     <!--Select 2-->
-                                    <select class="form-input select-filter" id="request-form-select"
-                                        data-minimum-results-for-search="Infinity">
-                                        <option disabled selected>Time end</option>
-                                        <option value="#">9:00 am</option>
-                                        <option value="#">10:00 am</option>
-                                        <option value="#">11:00 am</option>
-                                        <option value="#">12:00 pm</option>
-                                        <option value="#">1:00 pm</option>
-                                        <option value="#">2:00 pm</option>
-                                        <option value="#">3:00 pm</option>
-                                        <option value="#">4:00 pm</option>
-                                        <option value="#">5:00 pm</option>
-
+                                    <label class="" for="duration">
+                                        <span class="required-field">*</span>
+                                        Session duration
+                                    </label>
+                                    <select class="form-input selectpicker" id="duration" required name="duration">
+                                        @for($i=1; $i<4; $i++) <option value="{{$i}}">
+                                            {{$i==1 ? "$i hour" : "$i hours" }} </option>
+                                            @endfor
                                     </select>
+                                    <div class="arrow"><i class="fa-solid fa-angle-down"></i></div>
                                 </div>
                             </div>
 
 
-                            <div class="col-md-6">
-                                <div class="form-wrap">
-                                    <input class="form-input bg-white" id="balance" disabled type="text"
-                                        data-constraints="">
-                                    <label class="form-label" for="balance">Remaining Balance : 32 hour</label>
-                                </div>
-                            </div>
 
-
-                            <div class="col-md-6">
+                            <div class=" col-md-6">
                                 <div class="form-wrap">
-                                    <input class="form-input bg-white" id="cost" disabled type="text"
-                                        data-constraints="">
-                                    <label class="form-label" for="cost">Booking Cost : 3 hours</label>
+                                    <!--Select 2-->
+                                    <label class="" for="timeStart">
+                                        <span class="required-field">*</span>
+                                        Avaliable start time
+                                    </label>
+                                    <select class="form-input select-filter" id="timeStart" required name="timeStart">
+                                        @for($i=8; $i<18; $i++) {{$i==12 ? $x=12 : $x=$i-12;}} <option value="{{$i}}">
+                                            {{$i<12? "$i:00 am" : "$x:00 pm" }} </option>
+                                                @endfor
+                                    </select>
+                                    <div class="arrow"><i class="fa-solid fa-angle-down"></i></div>
                                 </div>
                             </div>
 
@@ -136,10 +117,10 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class=" offset-6 col-md-6">
-                                        <a href="/checkout " class="button button-block button-primary" type="submit">
+                                        <button class="button button-block button-primary" type="submit">
                                             Proceed to checkout
                                             <i class="fa-solid fa-circle-chevron-right ml-3"></i>
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -149,6 +130,74 @@
             </div>
         </div>
     </div>
+
+
+
+    <script>
+        const date = document.getElementById('date');
+        const timeStart = document.getElementById('timeStart');
+        const duration = document.getElementById('duration');
+        const studio = document.getElementById('studio');
+        const cost = document.getElementById('cost');
+        const children = timeStart.children;
+        const startTimes=  Array.from(children);
+
+        date.addEventListener('change', checkTimeIfAvaliable );
+        duration.addEventListener('change',checkTimeIfAvaliable);
+
+        const appointments = @JSON($appointments) ;
+
+
+
+        function enableAll(){
+            for (let i=0; i < 9; i++) {
+                console.log('i,ll try to remove disabe');
+                children[i].disabled=false;
+                }
+            }
+
+        function disableAll(){
+            for (let i=0; i < 9; i++) {
+                console.log('i,ll try to remove disabe');
+                children[i].disabled=true;
+                }
+            }
+
+        function checkTimeIfAvaliable() {
+
+            enableAll();
+
+            timeStart.value = "Choose start time";
+            console.log(date.value);
+            let timeArr = [];
+            appointments.forEach(app => {
+            if (app.date == date.value && app.studio_id == studio.value) {
+            timeArr.push([app.time_start, app.time_end]);
+            };
+        });
+
+            // console.log(timeArr);
+        if(timeArr.length>0) {
+            for (let x = 0; x < timeArr.length; x++) {
+                // console.log(timeArr[x]);
+                for (let i=0; i < startTimes.length; i++) {
+                        let option=parseFloat(startTimes[i].value);
+                        let appStart=parseFloat(timeArr[x][0]);
+                        let appEnd=parseFloat(timeArr[x][1]);
+                        let newDuration=parseFloat(duration.value);
+
+                        if (option + newDuration > appStart
+                            && option + newDuration <= appEnd
+                            ||option >= appStart && option < appEnd)
+                            {
+                            children[i].disabled=true;
+                            }
+                }
+            }
+        }
+    }
+
+    </script>
 
 </section>
 

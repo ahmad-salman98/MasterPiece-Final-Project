@@ -83,6 +83,51 @@
         </div>
     </div>
 
+    @if(Auth::user()->id == $user->id)
+    <div class="add-video row">
+        <div class="col-md-9 video-info">
+            <h4>
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                Add new video
+            </h4>
+            <div class="p-4 m-0 mt-3">
+                <form action="/add-video" method="post" id="addVideo" role="form" enctype="multipart/form-data">
+                    @csrf
+                    {{-- title --}}
+
+                    <div class="form-group d-flex">
+                        <label for="title">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Video title">
+                    </div>
+
+                    {{-- Url --}}
+                    <div class="form-group d-flex my-3">
+                        <label for="url">Link</label>
+                        <input type="text" class="form-control" id="url" name="url" placeholder="Youtube link">
+                    </div>
+
+                    {{-- image --}}
+                    <div class="form-group d-flex">
+                        <input type="file" class="form-control d-none" name="image" id="posterFile">
+                        <span class='choosePoster'>
+                            Upload poster
+                        </span>
+                        <span class="fileName" id="image">
+                            Click to upload poster
+                        </span>
+                    </div>
+                    <button type="submit" class="button button-lg button-primary-outline-v2 header-button  uploadVideo">
+                        Upload video
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class=" col-md-3 p-0">
+            <img src="./images/video.jpg" alt="">
+        </div>
+    </div>
+    @endif
     <div class=" row profile-content">
         <div class="col-lg-12">
             <div class="page-content">
@@ -113,43 +158,31 @@
                                         </div>
                                         @foreach ($user->videos as $video)
                                         <div class=" col-lg-4 col-md-6 col-sm-12 py-5">
-                                            {{-- <div class="item">
-                                                <div class="thumb">
-                                                    <img src="images/profile.jpg" alt="" class="clip">
-                                                    <a href={{"/show/video/$video->id/$user->id" }}
-                                                        target="_blank"><i class="fa fa-play"></i></a>
-                                                </div>
-                                                <div class="down-content">
-                                                    <h4>First Clip</h4>
-                                                    <span>
-                                                        <i class="fa fa-eye"></i>
-                                                        {{$video->views}}
-                                                    </span>
-                                                </div>
-                                            </div> --}}
-
                                             <div class="container">
                                                 <div class="row img-row">
-                                                    <img src="images/profile.jpg" alt="" class="">
+                                                    <a href={{"/show/video/$video->id/$user->id"}}>
+                                                        <img src="{{asset('storage/'.$video->image)}}" alt="" class="">
+                                                    </a>
                                                 </div>
                                                 <div class="row video-ifo d-flex">
                                                     <div class="user-video-img ">
-                                                        <img class="border-rounded" src="images/profile.jpg" alt=""
+                                                        <img class="border-rounded"
+                                                            src="{{asset('storage/'.$video->user->image)}}" alt=""
                                                             class="clip">
                                                     </div>
                                                     <div class="video-text ">
                                                         <div>
-                                                            <h6 class="text-truncate w-100"> Title goes here  </h6
-                                                                class="">
+                                                            <h6 class="text-truncate w-100"> {{$video->title}}
+                                                            </h6 class="">
                                                         </div>
                                                         <div>
-                                                            <b class=" text-truncate"> {{$video->user->name}} </b>
+                                                            <b class=" text-truncate"> {{$video->user->name}}
+                                                            </b>
                                                         </div>
                                                         <div>
-                                                            {{$video->views}} views . 22/11/2022
+                                                            {{$video->views}} views .
+                                                            {{date_format($video->created_at,"d/m/Y") }}
                                                         </div>
-
-
                                                     </div>
                                                 </div>
                                             </div>
@@ -213,8 +246,14 @@
                             @foreach($user->appointments as $appointment)
                             <tr>
                                 <td>{{$appointment->date}}</td>
-                                <td>{{$appointment->time_start}}</td>
-                                <td>{{$appointment->time_end}}</td>
+                                <td>{{
+                                    $appointment->time_start >12 ? ($appointment->time_start-12).":00 pm" :
+                                    $appointment->time_start.":00 am" }}
+                                </td>
+                                <td>{{
+                                    $appointment->time_end >12 ? ($appointment->time_end-12).":00 pm" :
+                                    $appointment->time_end.":00 am" }}
+                                </td>
                                 <td>{{$appointment->studio->location}}</td>
                                 <td>
                                     {{$appointment->coins > 1 ? $appointment->coins. ' Coins' :
@@ -237,6 +276,8 @@
 <script>
     // update profile picture
     const updateImage = document.getElementById('update-profile-icon');
+    const posterInput = document.getElementById('image');
+
     updateImage.addEventListener('click', () => {
     document.getElementById('chooseImage').click();
     }) ;
@@ -247,15 +288,15 @@
     document.getElementById('update-cover-button').addEventListener('click', () => {
         document.getElementById('chooseCover').click();
     });
-document.getElementById('chooseCover').onchange = ()=>{ document.getElementById('updateImage').submit()}
+    document.getElementById('chooseCover').onchange = ()=>{ document.getElementById('updateImage').submit()}
 
-//edit prifile
+    posterInput.addEventListener('click', (e)=>{
+        document.getElementById('posterFile').click();
+    });
 
-document.getElementById('editProfileBtn').style.display = 'none';
-document.getElementById('editProfileGear').addEventListener('click', ()=>{
-    document.getElementById('editProfileBtn').click();
-})
-
+document.getElementById('posterFile').onchange = ()=>{
+    posterInput.textContent = document.getElementById('posterFile').value;
+}
 
 
 

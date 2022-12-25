@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row row-50 justify-content-center align-items-xl-center">
             <div class="col-md-10 col-lg-5 col-xl-6"><img style="width:519px; height:564px; object-fit:cover"
-                    src="images/banner1.jpg" alt="">
+                    src="images/camerman.jpg" alt="">
             </div>
             <div class="col-md-10 col-lg-7 col-xl-6 mb-auto">
                 <h3>Why choose us</h3>
@@ -27,8 +27,9 @@
                     <!-- Tab panes-->
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="tabs-4-1">
-                            <p>with out experts, the improvements will be markable, your creer will be directed by
-                                proffesionals to make sure you reach your highest limits, or even more.</p>
+                            <p>with our experts, the improvements will be markable, your career will be directed by
+                                professionals to make sure you
+                                reach your highest limits, or even more.</p>
                             <div class="group-md group-middle"><a
                                     class="button button-width-xl-230 button-primary button-pipaluk" href="/contact">Get
                                     in
@@ -45,7 +46,7 @@
                                 <article class="progress-linear progress-secondary animated-first">
                                     <div class="progress-header">
                                         <p class="text-secondary">
-                                            Content Making
+                                            Video making
                                         </p>
                                     </div>
                                     <div class="progress-bar-linear-wrap">
@@ -59,7 +60,7 @@
                                 <!-- Linear progress bar-->
                                 <article class="progress-linear progress-orange animated-first my-3">
                                     <div class="progress-header">
-                                        <p class="text-secondary">Marketing </p>
+                                        <p class="text-secondary">Content writing </p>
                                     </div>
                                     <div class="progress-bar-linear-wrap">
                                         <div class="progress-bar-linear" data-gradient="" style="width: 82%;"><span
@@ -69,9 +70,9 @@
                                 </article>
 
                                 <!--Linear progress bar-->
-                                <article class="progress-linear animated-first ">
+                                <article class="progress-linear animated-first progress-blue">
                                     <div class="progress-header">
-                                        <p class="text-secondary">Career inhancement</p>
+                                        <p class="text-secondary">Live directing </p>
                                     </div>
                                     <div class="progress-bar-linear-wrap">
                                         <div class="progress-bar-linear" data-gradient="" style="width: 85%;"><span
@@ -117,52 +118,7 @@
 <section class="section-60 section-lg-90 bg-whisper" style="margin: 10rem 0">
     <div class="container">
         <div class="row row-40 align-items-sm-end">
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="thumbnail-variant-2-wrap">
-                    <div class="thumbnail thumbnail-variant-2">
-                        <figure class="thumbnail-image "><img src="images/jafer.png"
-                                style="max-width: 100%; object-fit:cover " />
-                        </figure>
-                        <div class="thumbnail-inner">
-                            <div class="link-group"><span
-                                    class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
-                                    class="link-white" href="tel:#">+1 (409) 987–5874</a></div>
-                            <div class="link-group"><span
-                                    class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
-                                    class="link-white" href="mailto:ahmad98alsalman@gmail.com">info@demolink.org</a>
-                            </div>
-                        </div>
-                        <div class="thumbnail-caption">
-                            <p class="text-header"><a href="#">Jafer Al-Dakhily</a></p>
-                            <div class="divider divider-md bg-teak"></div>
-                            <p class="text-caption">CEO</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-md-4 col-lg-3">
-                <div class="thumbnail-variant-2-wrap">
-                    <div class="thumbnail thumbnail-variant-2">
-                        <figure class="thumbnail-image"><img src="images/banner2.jpg"
-                                style="max-width: 100%; object-fit:cover " />
-                        </figure>
-                        <div class="thumbnail-inner">
-                            <div class="link-group"><span
-                                    class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
-                                    class="link-white" href="tel:#">+1 (409) 987–5874</a></div>
-                            <div class="link-group"><span
-                                    class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
-                                    class="link-white" href="mailto:ahmad98alsalman@gmail.com">info@demolink.org</a>
-                            </div>
-                        </div>
-                        <div class="thumbnail-caption">
-                            <p class="text-header"><a href="#">John Doe</a></p>
-                            <div class="divider divider-md bg-teak"></div>
-                            <p class="text-caption">Marketing Manager</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {{-- ahmad salman --}}
             <div class="col-sm-6 col-md-4 col-lg-3">
                 <div class="thumbnail-variant-2-wrap">
                     <div class="thumbnail thumbnail-variant-2">
@@ -170,18 +126,66 @@
                                 style="max-width: 100%; object-fit:cover " />
                         </figure>
                         <div class="thumbnail-inner">
-                            <div class="link-group"><span
-                                    class="novi-icon icon icon-xxs icon-primary material-icons-local_phone"></span><a
-                                    class="link-white" href="tel:#">+1 (409) 987–5874</a></div>
-                            <div class="link-group"><span
-                                    class="novi-icon icon icon-xxs icon-primary fa-envelope-o"></span><a
-                                    class="link-white" href="mailto:ahmad98alsalman@gmail.com">info@demolink.org</a>
+                            <div class="link-group">
+                            </div>
+                            <div class="link-group"><span> <i class="fa-regular fa-envelope" style="color: #FF4B2B"></i>
+                                </span><a class="link-white" href="mailto:a.salman@klaket.com">A.Salman@klaket.com</a>
                             </div>
                         </div>
                         <div class="thumbnail-caption">
                             <p class="text-header"><a href="#">Ahmad Salman</a></p>
                             <div class="divider divider-md bg-teak"></div>
-                            <p class="text-caption">Director </p>
+                            <p class="text-caption">Founder </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {{-- jafer --}}
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="thumbnail-variant-2-wrap">
+                    <div class="thumbnail thumbnail-variant-2">
+                        <figure class="thumbnail-image "><img src="images/jafer.png"
+                                style="max-width: 100%; object-fit:cover " />
+                        </figure>
+                        <div class="thumbnail-inner">
+                            <div class="link-group">
+                            </div>
+                            <div class="link-group"><span> <i class="fa-regular fa-envelope" style="color: #FF4B2B"></i>
+                                </span>
+                                <a class="link-white" href="mailto:J.Dakhily@klaket.com">J.Dakhily@klaket.com</a>
+                            </div>
+                        </div>
+                        <div class="thumbnail-caption">
+                            <p class="text-header">
+                                <a href="#">Jafer Al-Dakhily</a>
+                            </p>
+                            <div class="divider divider-md bg-teak"></div>
+                            <p class="text-caption">CEO</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- osama --}}
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="thumbnail-variant-2-wrap">
+                    <div class="thumbnail thumbnail-variant-2">
+                        <figure class="thumbnail-image"><img src="images/osama.png"
+                                style="max-width: 100%; object-fit:cover " />
+                        </figure>
+                        <div class="thumbnail-inner">
+                            <div class="link-group">
+                            </div>
+                            <div class="link-group"><span> <i class="fa-regular fa-envelope" style="color: #FF4B2B"></i>
+                                </span><a class="link-white" href="mailto:J.Doe@klaket.com">O.Dasouky@klaket.com</a>
+                            </div>
+                        </div>
+                        <div class="thumbnail-caption">
+                            <p class="text-header">
+                                <a href="#">Osama Dasouky</a>
+                            </p>
+                            <div class="divider divider-md bg-teak"></div>
+                            <p class="text-caption">Marketing Manager</p>
                         </div>
                     </div>
                 </div>
@@ -202,7 +206,7 @@
 
 
 {{-- Why choose us starts --}}
-<section class="bg-whisper " style="margin:10rem 0">
+<section class="bg-whisper " style="margin-top:10rem 0">
     <div class="container">
         <div class="row align-items-lg-end">
             <div class="offset-md-1 offset-lg-0 col-md-8 col-lg-6 col-xl-5">
@@ -216,7 +220,7 @@
                                 <article class="icon-box-horizontal">
                                     <div class="unit unit-horizontal unit-spacing-md">
                                         <div class="unit-left">
-                                            <i class="fa-solid fa-handshake fa-2xl pt-4" style="color: # FF4B2B"></i>
+                                            <i class="fa-solid fa-handshake fa-2xl pt-4" style="color: #FF4B2B"></i>
                                         </div>
                                         <div class="unit-body">
                                             <h5><a href="#">Our Beliefs</a></h5>
@@ -231,7 +235,7 @@
                                 <article class="icon-box-horizontal">
                                     <div class="unit unit-horizontal unit-spacing-md">
                                         <div class="unit-left">
-                                            <i class="fa-solid fa-briefcase fa-2xl pt-4" style="color: # FF4B2B"></i>
+                                            <i class="fa-solid fa-briefcase fa-2xl pt-4" style="color: #FF4B2B"></i>
                                         </div>
                                         <div class="unit-body">
                                             <h5><a href="#">Rich Experience</a></h5>
@@ -246,7 +250,7 @@
                                 <article class="icon-box-horizontal">
                                     <div class="unit unit-horizontal unit-spacing-md">
                                         <div class="unit-left">
-                                            <i class="fa-solid fa-chart-line fa-2xl pt-4" style="color: # FF4B2B"></i>
+                                            <i class="fa-solid fa-chart-line fa-2xl pt-4" style="color: #FF4B2B"></i>
                                         </div>
                                         <div class="unit-body">
                                             <h5><a href="#">Great Results</a></h5>
@@ -261,8 +265,10 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-9 col-lg-6 col-xl-7 offset-top-30 offset-md-top-0 d-none d-lg-block">
-                <div class="image-wrap-1"><img style="height: 100%; object-fit:cover" />
+            <div class="col-md-9 col-lg-6 col-xl-7 offset-top-30 offset-md-top-0 d-none d-lg-block d-flex  ">
+                <div class="image-wrap-1">
+                    <img class="ml-auto d-flex px-5  w-100" src="images\employee.png"
+                        style="height: 100%; object-fit:cover" />
                 </div>
             </div>
         </div>

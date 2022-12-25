@@ -106,6 +106,7 @@ class UserController extends Controller
             $user->save();
             return back()->with('success', 'Profile picture updated successfully');
         }
+
         // in case of profile cover update
         else if ($request->hasFile('cover')) {
             $this->validate($request, ['file' => 'image']);
@@ -113,6 +114,7 @@ class UserController extends Controller
             $user->save();
             return back()->with('success', 'Profile cover was updated successfully');
         }
+
         // in case of profile info update
         else {
 
@@ -152,8 +154,7 @@ class UserController extends Controller
                     'password' => Hash::make($request->password)
                 ]);
                 return redirect()->back()->with('success', 'password updated successfully');
-            }
-             else {
+            } else {
                 return redirect()->back()->with('error', 'New password can not be the same as current password!');
             }
         } else {
@@ -181,5 +182,19 @@ class UserController extends Controller
         }
         $video->save();
         return redirect($video->url);
+    }
+
+    // store new video
+    function addVideo(Request $request)
+    {
+        $this->validate($request, ['file' => 'image']);
+
+        $video = new Video;
+        $video->image = $request->file('image')->store('logos', 'public');
+        $video->title = $request->title;
+        $video->user_id = Auth::user()->id;
+        $video->url = $request->url;
+        $video->save();
+        return back()->with('success', 'Video uploaded successfully');
     }
 }
