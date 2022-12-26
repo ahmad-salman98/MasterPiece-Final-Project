@@ -37,3 +37,9 @@
     -link:
     https://www.figma.com/file/kyZlynTtaGYpJS8TUKocYb/Masterpiece-%2F-Ahmad-Salman?node-id=0%3A1&t=m2H1fasgKAjTJuAd-1
     
+    
+4_Trello board:
+    
+    The project roadmap was implemented using trello tasks manager.
+    Trello link: https://trello.com/b/rIJ9Nhgn/to-do
+    
