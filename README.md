@@ -28,3 +28,10 @@
         -Visual Code
         -chatGPT
         
+3_ Wireframe and mockup: 
+    -pdf:
+    [Masterpiece design_ Ahmad Salman.pdf](https://github.com/ahmad-salman98/MasterPiece-Final-Project/files/10303109/Masterpiece.design_.Ahmad.Salman.pdf)
+
+    -link:
+    https://www.figma.com/file/kyZlynTtaGYpJS8TUKocYb/Masterpiece-%2F-Ahmad-Salman?node-id=0%3A1&t=m2H1fasgKAjTJuAd-1
+    
