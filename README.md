@@ -9,6 +9,7 @@
     always looking for exciting new projects and partnerships, and welcome the opportunity to bring your 
     vision to life.
     
+    - in our database, we store users accounts info and clips, appointments history, payments history, our studios info, and the clints messages.
     
 2_ Technologies and Tools:
     
