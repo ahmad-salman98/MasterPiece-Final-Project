@@ -3103,7 +3103,7 @@ tbody.collapse.show {
 
 .dropdown-menu.show {
     display: block;
-    position: absolute ;
+    position: absolute;
     transform: translate3d(921px, 122px, 0px);
     top: -1px;
     left: 2rem;
@@ -8760,7 +8760,7 @@ a.text-dark:hover {
 }
 
 .text-muted {
-    color: #d9d9d9 !important;
+    color: gray !important;
 }
 
 .text-hide {

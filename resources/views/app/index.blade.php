@@ -585,7 +585,7 @@
                     <div class="pricing-item item-style">
                         <header class="pricing-item-header">
                             <div class="pricing-item-heading">Basic</div>
-                            <div class="pricing-item-price"><small>from</small> 50$</div>
+                            <div class="pricing-item-price"><small>only for</small> 50$</div>
                         </header>
                         <div class="pricing-item-h ">
                             <div class="pricing-item-content">
@@ -593,7 +593,7 @@
 
                                     <li class="active">
                                         <i class="fa-solid fa-check"></i>
-                                        2.5 Casting hours
+                                        50 Point
                                     </li>
 
                                     <li class="active">
@@ -606,16 +606,16 @@
                                         Live production
                                     </li>
 
-                                    <li class="">
+                                    <li class="active">
                                         <i class="fa-solid fa-check"></i>
                                         Video making
                                     </li>
 
-                                    <li class="">
+                                    <li class="active">
                                         <i class="fa-solid fa-check"></i>
                                         Content writing
                                     </li>
-                                    <li class="">
+                                    <li class="active">
                                         <i class="fa-solid fa-check"></i>
                                         Digital marketing
                                     </li>
@@ -623,11 +623,7 @@
                             </div>
                             <footer class="pricing-item-footer">
                                 <a href="#!" class="btn btn-large btn-with-icon btn-wide ripple" id="basicPlane">
-                                    <span>Get Starter</span>
-                                    <svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9">
-                                        <use xlink:href="assets/img/sprite.svg#arrow-right"></use>
-                                    </svg>
-                                    <span class="el-ripple-circle" style="left: 272.4px; top: 61px;"></span>
+                                    <span>Get this offer </span>
                                 </a>
                             </footer>
                         </div>
@@ -641,14 +637,14 @@
                         <div class="pricing-item-badge">Best Deal</div>
                         <header class="pricing-item-header">
                             <div class="pricing-item-heading">Optimal</div>
-                            <div class="pricing-item-price"><small>from</small> 100$</div>
+                            <div class="pricing-item-price"><small>only for</small> 100$</div>
                         </header>
                         <div class="pricing-item-h pricing-2">
                             <div class="pricing-item-content">
                                 <ul class="pricing-item-list">
                                     <li class="active">
                                         <i class="fa-solid fa-check"></i>
-                                        5 Casting hours
+                                        120 Point
                                     </li>
 
                                     <li class="active">
@@ -666,11 +662,11 @@
                                         Video making
                                     </li>
 
-                                    <li class="">
+                                    <li class="active">
                                         <i class="fa-solid fa-check"></i>
                                         Content writing
                                     </li>
-                                    <li class="">
+                                    <li class="active">
                                         <i class="fa-solid fa-check"></i>
                                         Digital marketing
                                     </li>
@@ -679,11 +675,7 @@
                             <footer class="pricing-item-footer">
                                 <a href="#!" class="btn btn-border btn-large btn-with-icon btn-wide ripple"
                                     id="obtimalPlane">
-                                    <span>Get Starter</span>
-                                    <svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9">
-                                        <use xlink:href="assets/img/sprite.svg#arrow-right"></use>
-                                    </svg>
-                                    <span class="el-ripple-circle" style="left: 359.412px; top: 49px;"></span>
+                                    <span>Get this offer </span>
                                 </a>
                             </footer>
                         </div>
@@ -694,14 +686,14 @@
                     <div class="pricing-item item-style">
                         <header class="pricing-item-header">
                             <div class="pricing-item-heading">Ultimate</div>
-                            <div class="pricing-item-price"><small>from</small> 200$</div>
+                            <div class="pricing-item-price"><small>only for</small> 200$</div>
                         </header>
                         <div class="pricing-item-h pricing-3">
                             <div class="pricing-item-content">
                                 <ul class="pricing-item-list">
                                     <li class="active">
                                         <i class="fa-solid fa-check"></i>
-                                        12 Casting hours
+                                        240 Point
                                     </li>
 
                                     <li class="active">
@@ -731,11 +723,7 @@
                             </div>
                             <footer class="pricing-item-footer">
                                 <a href="#!" class="btn btn-large btn-with-icon btn-wide ripple" id="ultimatePlane">
-                                    <span>Get Starter</span>
-                                    <svg class="btn-icon-right" viewBox="0 0 13 9" width="13" height="9">
-                                        <use xlink:href="assets/img/sprite.svg#arrow-right"></use>
-                                    </svg>
-                                    <span class="el-ripple-circle" style="left: 180.425px; top: -108px;"></span>
+                                    <span>Get this offer </span>
                                 </a>
                             </footer>
                         </div>
@@ -790,6 +778,7 @@
                                 <option value="{{$studio->id}}">{{$studio->location}}</option>
                                 @endforeach
                             </select>
+                            <div class="arrow"><i class="fa-solid fa-angle-down"></i></div>
                         </div>
                 </div>
                 <div class="modal-footer">

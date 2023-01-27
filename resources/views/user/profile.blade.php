@@ -70,7 +70,8 @@
 
                             @if($user->id ==Auth::user()->id)
                             {{-- coins --}}
-                            <li class="info-4"> <i class="fa-solid fa-coins me-1"></i>Coins:
+                            <li class="info-4"> <i class="fa-solid fa-sack-dollar"></i>
+                                Points:
                                 <span>{{$user->coins}}</span>
                             </li>
                             @endif
@@ -88,7 +89,7 @@
         <div class="col-md-9 video-info">
             <h4>
                 <i class="fa-solid fa-cloud-arrow-up"></i>
-                Add new video
+                Add New <span class="gold"> Video</span>
             </h4>
             <div class="p-4 m-0 mt-3">
                 <form action="/add-video" method="post" id="addVideo" role="form" enctype="multipart/form-data">
@@ -97,18 +98,19 @@
 
                     <div class="form-group d-flex">
                         <label for="title">Title</label>
-                        <input type="text" class="form-control" id="title" name="title" placeholder="Video title">
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Video title"
+                            required>
                     </div>
 
                     {{-- Url --}}
                     <div class="form-group d-flex my-3">
                         <label for="url">Link</label>
-                        <input type="text" class="form-control" id="url" name="url" placeholder="Youtube link">
+                        <input type="text" class="form-control" id="url" name="url" placeholder="Youtube link" required>
                     </div>
 
                     {{-- image --}}
                     <div class="form-group d-flex">
-                        <input type="file" class="form-control d-none" name="image" id="posterFile">
+                        <input type="file" class="form-control d-none" name="image" id="posterFile" required>
                         <span class='choosePoster'>
                             Upload poster
                         </span>
@@ -124,7 +126,7 @@
         </div>
 
         <div class=" col-md-3 p-0">
-            <img src="./images/video.jpg" alt="">
+            <img src="/images/video.jpg" alt="">
         </div>
     </div>
     @endif
@@ -156,6 +158,8 @@
                                             </div>
                                             @endif
                                         </div>
+
+                                        @if($user->videos->count() >0)
                                         @foreach ($user->videos as $video)
                                         <div class=" col-lg-4 col-md-6 col-sm-12 py-5">
                                             <div class="container">
@@ -188,6 +192,7 @@
                                             </div>
                                         </div>
                                         @endforeach
+                                        @endif
 
                                         <div class="col-lg-12">
                                             <div class="main-button w-100 my-5 pt-5">

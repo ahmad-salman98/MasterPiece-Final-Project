@@ -19,7 +19,7 @@ Route::post('payment', [AppController::class, 'payment'])->name('payment');
 Route::get('/appointment', [AppController::class, 'appointment'])->name('appointment')->middleware('auth');
 
 //make appointment
-Route::post('/make-appointment', [AppController::class, 'makeAppointment'])->name('makeAppointment');
+Route::post('/make-appointment', [AppController::class, 'makeAppointment'])->name('makeAppointment')->middleware('auth');
 
 
 //confirm appointment
@@ -59,7 +59,7 @@ Route::post('/contact', [AppController::class, 'contact'])->name('contact');
 Route::post('/store', [UserController::class, 'store'])->name('store');
 
 // ---------- login / signup page -------------
-Route::get('/register', [UserController::class, 'create'])->name('register');
+Route::get('/register', [UserController::class, 'create'])->name('register')->middleware('guest');
 
 // ---------- login auth  -------------
 Route::post('/authenticate', [UserController::class, 'authenticate'])->name('authentication');

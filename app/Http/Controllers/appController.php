@@ -62,14 +62,18 @@ class AppController extends Controller
     //make appointment
     public function makeAppointment(Request $request)
     {
-        return View('app.checkout', [
-            'timeStart' => $request->timeStart,
-            'date' => $request->date,
-            'duration' => $request->duration,
-            'name' => $request->name,
-            'phone' => $request->phone,
-            'studio' => Studio::find($request->studio)
-        ]);
+        if (Auth::user()->coins < $request->duration * 10) {
+            return redirect('/#plans')->with('error', 'You dont have enogh points to make an appointment');
+        } else {
+            return View('app.checkout', [
+                'timeStart' => $request->timeStart,
+                'date' => $request->date,
+                'duration' => $request->duration,
+                'name' => $request->name,
+                'phone' => $request->phone,
+                'studio' => Studio::find($request->studio)
+            ]);
+        }
     }
 
     // view checkout page
@@ -99,11 +103,11 @@ class AppController extends Controller
         $payment->save();
 
         if ($payment->plan == 'basic') {
-            $user->coins = ($user->coins + 20);
-        } else  if ($payment->plan == 'obtimal') {
             $user->coins = ($user->coins + 50);
-        } else if ($payment->plan == 'ultimate') {
+        } else  if ($payment->plan == 'obtimal') {
             $user->coins = ($user->coins + 120);
+        } else if ($payment->plan == 'ultimate') {
+            $user->coins = ($user->coins + 240);
         }
         $user->save();
         return redirect()->back();
@@ -123,6 +127,9 @@ class AppController extends Controller
         $app->user_id = Auth::user()->id;
         $app->save();
 
+        Auth::user()->coins = Auth::user()->coins - $request->cost;
+        Auth::user()->save();
+
         return redirect()->intended('/');
     }
 
@@ -130,6 +137,28 @@ class AppController extends Controller
     public function contact(Request $request)
     {
         Contact::create($request->all());
-    return back()->with('success', 'Message was sent successfully');
+        return back()->with('success', 'Message was sent successfully');
+    }
+
+
+
+
+    // ==================== backend ========
+
+    // videos controllers
+
+    // return all vedios
+
+    public function getVedios($id = null)
+    {
+        return $id ? Video::findOrFail($id) : Video::all();
+    }
+
+
+
+    // Payements controller
+    public function getPayments($id = null)
+    {
+        return $id ? Payment::findOrFail($id) : Payment::all();
     }
 }

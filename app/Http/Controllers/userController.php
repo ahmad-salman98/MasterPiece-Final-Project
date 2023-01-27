@@ -197,4 +197,22 @@ class UserController extends Controller
         $video->save();
         return back()->with('success', 'Video uploaded successfully');
     }
+
+
+    // ================ backend =================
+
+    //return all users
+    public function getUsers($id = null)
+    {
+        return $id ? User::findOrFail($id) : User::all();
+    }
+
+
+    //delete user
+    public function deleteUser($id)
+    {
+        $user = User::findOrFail($id);
+        $user->delete();
+        return ['status' => 'user has been deleted successfully'];
+    }
 }

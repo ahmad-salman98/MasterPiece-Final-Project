@@ -27,7 +27,7 @@
             integrity="sha512-yDlE7vpGDP7o2eftkCiPZ+yuUyEcaBwoJoIhdXv71KZWugFqEphIS3PU60lEkFaz8RxaVsMpSvQxMBaKVwA5xg=="
             crossorigin="anonymous" referrerpolicy="no-referrer">
         </script>
-        
+
     </head>
 
     <body>
@@ -44,7 +44,7 @@
         <div class="success-msg flash-msg" id="successMsg">
             {{session('success')}}
             <script>
-                window.setTimeout("closeDiv();", 5000);
+                window.setTimeout("closeDiv();", 10000);
 
                 function closeDiv(){
                 document.getElementById("successMsg").style.display=" none";
@@ -58,7 +58,7 @@
             {{session('error')}}
         </div>
         <script>
-            window.setTimeout("closeDiv();", 5000);
+            window.setTimeout("closeDiv();", 10000);
 
         function closeDiv(){
         document.getElementById("errorMsg").style.display=" none";

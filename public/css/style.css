@@ -17003,38 +17003,76 @@ p + .list-marked {
 }
 
 /* ============= checkout summary ===========  */
-.summary ul {
-    padding: 30px;
-    border: #999 2px solid;
-    height: 450px;
-    border-top: none;
-}
-.summary ul li {
+.checkout-details,
+.map-div {
     width: 100%;
+    border: 1px solid #ff4b2b;
+    border-radius: 23px;
+    border-top: 23px #ff4b2b solid;
+    display: flex;
+    box-shadow: 0 0 10px #00000050;
+}
+.map-div {
+    border: 1px solid #ff4b2b;
+    border-bottom: 23px #ff4b2b solid;
+}
+
+.bill {
+    margin: 2rem 0;
+}
+.appointment-services {
+    border-right: 2px solid #80808054;
+    margin: 2rem 0;
+}
+.checkout-details h5 {
+    font-size: 18px;
+}
+@media screen and (max-width: 992px) {
+    .checkout-details h5 {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .appointment-services {
+        border-right: 0;
+    }
+}
+
+.red {
+    color: #ff4b2b;
+}
+
+.services,
+.bill ul {
+    border-bottom: 2px solid #ff4b2b;
+    padding-bottom: 2rem;
+}
+
+.services form div,
+.bill li {
+    margin: 1rem 0 0;
+}
+.checkout-details h6 {
     font-size: 14px;
-    color: #444;
-    font-weight: 700;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ff4b2b;
 }
-.summary ul li span {
-    float: right;
-    font-weight: 500;
-    color: #555;
+
+.checkout-details .border-bottom {
+    border-bottom: 2px solid #ff4b2b;
 }
-.summary h4 {
-    padding-left: 30px;
-    border: 2px solid #999;
-    border-bottom: none;
+
+.confirm-btn {
+    font-size: 16px;
+    padding: 1rem;
+    background-color: #fff !important;
+    color: black !important;
+    text-shadow: 0 0 black !important;
+    cursor: pointer;
+    box-shadow: 0 0 5px #00000050;
 }
-.maps {
-    border: 2px solid #999;
-    background-color: #f2f2f2;
-}
-.summary {
-    background-color: #f2f2f2;
-    padding: 0;
+
+.confirm-btn:hover {
+    background-color: #ff4b2b !important;
+    color: #fff !important;
 }
 
 /* ============= pricing ============ */
@@ -17240,6 +17278,7 @@ p + .list-marked {
     text-transform: capitalize;
     letter-spacing: 0.5px;
     font-family: inherit;
+    position: fixed;
 }
 
 .error-msg {
@@ -17303,11 +17342,13 @@ p + .list-marked {
     }
 }
 
-select {
+.form-wrap,
+.form-group {
     position: relative;
 }
 
-.form-wrap .arrow {
+.form-wrap .arrow,
+.form-group .arrow {
     position: absolute;
     color: #ff4b2b;
     top: 40px;
