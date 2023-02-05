@@ -44,3 +44,7 @@
     The project roadmap was implemented using trello tasks manager.
     Trello link: https://trello.com/b/rIJ9Nhgn/to-do
     
+    
+5_Presentation:
+    [Klaket productions.pptx](https://github.com/ahmad-salman98/MasterPiece-Final-Project/files/10610487/Klaket.productions.pptx)
+
